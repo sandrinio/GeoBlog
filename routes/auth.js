@@ -4,7 +4,8 @@ var router = express.Router();
 
 
 router.get("/", function (req, res) {
-   res.send("good start is good!!! :)");
+   res.render("auth/landing");
 });
+
 
 module.exports = router;
