@@ -1,7 +1,14 @@
+body {
+    background-color: #c1c1c1;
+}
+
 #feedsContainer {
+  padding: 5px 10px;
+  margin: 5px 10px;
+  width: 96%;
   height: 150px;
   /*border: 2px black solid;*/
-  background-color: #ececec;
+    background-color: #ececec;
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
@@ -16,7 +23,7 @@
   height: 100%;
   width: 150px;
   margin-top: 4px;
-    margin-left: -9px;
+  margin-left: -9px;
   display: inline-block;
   float: left;
 }
@@ -28,11 +35,36 @@
 }
 
 .panel-default>.panel-heading {
-    background-color: #009c74 !important;
+    background-color: #7c5aa6 !important;
 }
 
+.row{
+  padding-top: 20px;
+}
 
+#feedsMainContainer {
+    background-color: #ececec;
+    -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+}
 
+#firstContainer {
+    background-color: #ececec;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+}
+
+.well {
+    border: solid #583C78 0.8px !important;
+}
+
+#containerDesc{
+    margin-top: 100px;
+    margin-left: 100px;
+}
 
 
 
@@ -48,11 +80,11 @@
 /*====================================================================================*/
 
 .navbar-default {
-  background-color: #00b48c !important;
+  background-color: #754c97 !important;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-  background-color: #00b48c !important;
+  background-color: #754c97 !important;
   border-color: #008568 !important;
 }
 .navbar-default .navbar-brand {
@@ -75,8 +107,8 @@
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #4e256b !important;
-  background-color: #008568 !important;
+  color: #e6e6e6 !important;
+  background-color: #583c78 !important;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -85,11 +117,11 @@
   background-color: #008568;
 }
 .navbar-default .navbar-toggle {
-  border-color: #008568 !important;
+  border-color: #754c97 !important;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #008568 !important;
+  background-color: #583c78 !important;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #fdffff !important;
