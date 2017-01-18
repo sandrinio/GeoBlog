@@ -1,7 +1,7 @@
 <%include ../partials/header%>
 
 <div class="container">
-    <form action="/mainPage" method="GET">
+    <form action="/mainPage" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">შეიყვანეთ სათაური ქართულად</label>
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="სათაური">
@@ -11,15 +11,16 @@
             <option>Apple / iOS</option>
             <option>Navision</option>
             <option>Must know!</option>
+            <option>FAQ</option>
             <option>Other</option>
         </select>
-        <textarea name="editor1"></textarea>
+        <textarea name="editor"></textarea>
 
         <script>
-            CKEDITOR.replace( 'editor1' );
+            CKEDITOR.replace('editor');
         </script>
 
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button class="btn btn-default">Submit</button>
     </form>
 
 </div>

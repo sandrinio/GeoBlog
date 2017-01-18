@@ -1,5 +1,6 @@
 ****** Users Schema ******
 
+pic:        image
 email:      ssuladze@geocell.ge 
 name:       Sandro
 surname:    Suladze
