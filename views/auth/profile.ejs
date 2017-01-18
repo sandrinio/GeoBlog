@@ -1,0 +1,35 @@
+<%include ../partials/header%>
+
+<div class="container">
+    <div id="tableContainer">
+      <table class="table">
+        <tr>
+           <td>Change Picture</td>
+        </tr>
+         <tr>
+           <td>Change Office</td>
+           <td><%= currentUser.office %></td>
+        </tr>
+        <tr>
+           <td>Change Office</td>
+           <td><%= currentUser.office %></td>
+        </tr>
+      </table>
+    </div>
+
+
+
+
+        <h3><em><u>Signature</u></em></h3>
+        <p><strong><%=currentUser.firstname + " " + currentUser.lastname%></strong><br>
+        <%= currentUser.position %><br>
+        <%= currentUser.office %><br>
+        Mobile: <%= currentUser.tel %><br>
+        <a><%= currentUser.username %></a><br>
+        Geocell LLC., Part of Telia Company<br>
+        3 Gotua Str. Right Side of the River Mtkvari,Tbilisi, 0160, Georgia<br>
+        <a>www.teliacompany.com</a> <br>
+        <a>www.geocell.ge</a></p>
+</div>
+
+<%include ../partials/footer%>

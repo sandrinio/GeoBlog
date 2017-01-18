@@ -14,6 +14,17 @@
                     <input class="form-control" type="text" name="user[lastname]" placeholder="Last Name">
                 </div>
                 <div class="form-group">
+                     <div class='input-group date' id='datetimepicker1'>
+                    <input name="user[bday]" type='date' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="user[tel]" value="+995 5" placeholder="Mobile">
+                </div>
+                <div class="form-group">
                     <select name="user[permission]" class="form-control">
                         <option>user</option>
                         <option>admin</option>
@@ -21,8 +32,8 @@
                 </div>
                 <div class="form-group">
                     <select name="user[office]" class="form-control">
-                        <option>Pixel</option>
-                        <option>Central</option>
+                        <option>Vake Shop</option>
+                        <option>Central Shop</option>
                         <option>Gldani Shop</option>
                         <option>Marjanishvili Shop</option>
                         <option>Rustaveli Shop</option>
@@ -46,12 +57,9 @@
                 </div>
 
                 <a href="/mainPage">Go Back</a>
-
         </form>
     </div>
 </div>
-
-
-
+             
 
 <%include ../partials/footer%>

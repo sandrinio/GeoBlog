@@ -62,7 +62,7 @@
          <% function capitalizeFirstLetter(string) { %>
           <% return string.charAt(0).toUpperCase() + string.slice(1); %>
           <% } %>
-          <li><a href="#"><%=capitalizeFirstLetter(currentUser.firstname) + " " + capitalizeFirstLetter(currentUser.lastname)%></a></li>
+          <li><a href="/profile"><em><%=capitalizeFirstLetter(currentUser.firstname) + " " + capitalizeFirstLetter(currentUser.lastname)%></em></a></li>
           <li><a href="/logout">Logout</a></li>
           <% } %>
       </ul>

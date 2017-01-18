@@ -117,7 +117,10 @@ ul li img {
 
 
 
-
+#tableContainer .table {
+    max-width: 600px;
+    margin: 15% auto;
+}
 
 
 
