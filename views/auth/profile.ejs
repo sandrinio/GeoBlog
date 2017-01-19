@@ -3,17 +3,34 @@
 <div class="container">
     <div id="tableContainer">
       <table class="table">
-        <tr>
-           <td>Change Picture</td>
-        </tr>
-         <tr>
-           <td>Change Office</td>
-           <td><%= currentUser.office %></td>
-        </tr>
-        <tr>
-           <td>Change Office</td>
-           <td><%= currentUser.office %></td>
-        </tr>
+          <form action="/profile?_method=PUT" method="POST">
+                <tr>
+                   <td>Change Picture</td>
+                </tr>
+                 <tr>
+                   <td>Change Office</td>
+                   <td>
+                       <select name="user[office]" class="form-control profile-page">
+                           <option><%= currentUser.office %></option>
+                           <option>Vake Shop</option>
+                           <option>Central Shop</option>
+                           <option>Gldani Shop</option>
+                           <option>Marjanishvili Shop</option>
+                           <option>Rustaveli Shop</option>
+                           <option>Avlabari Shop</option>
+                           <option>Ortachala Shop</option>
+                           <option>Varketili Shop</option>
+                       </select>
+                   </td>
+                </tr>
+              <button class="btn btn-primary">Change</button>
+                <tr>
+                   <td>Change Mobile</td>
+                   <td><input type="text" name="user[tel]" class="form-control"></td>
+
+                </tr>
+
+          </form>
       </table>
     </div>
 
@@ -21,7 +38,7 @@
 
 
         <h3><em><u>Signature</u></em></h3>
-        <p><strong><%=currentUser.firstname + " " + currentUser.lastname%></strong><br>
+        <p><span id="signature"><strong><%=currentUser.firstname + " " + currentUser.lastname%></strong></span><br>
         <%= currentUser.position %><br>
         <%= currentUser.office %><br>
         Mobile: <%= currentUser.tel %><br>

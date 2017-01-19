@@ -25,7 +25,7 @@ router.post("/new", function (req, res) {
 
 router.post("/", passport.authenticate("local", {
     successRedirect: "/mainPage",
-    failureRedirect: "/landing"
+    failureRedirect: "/"
 }), function (req, res) {
     res.redirect("mainPage/mainPage");
 });

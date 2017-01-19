@@ -11,8 +11,9 @@ var mongoose       = require("mongoose"),
     User           = require("./models/user");
 
 
-var authRoutes = require("./routes/auth"),
-    mainRoutes = require("./routes/mainPage");
+var authRoutes    = require("./routes/auth"),
+    mainRoutes    = require("./routes/mainPage"),
+    profileRoutes = require("./routes/profile");
 
 app.use(session({
     secret: 'keyboard cat',
@@ -41,6 +42,7 @@ app.use(function (req, res, next) {
 
 app.use(authRoutes);
 app.use(mainRoutes);
+app.use(profileRoutes);
 
 mongoose.Promise = global.Promise;
 
@@ -53,6 +55,6 @@ mongoose.connect("mongodb://sandro:sandro1234@ds054479.mlab.com:54479/geocell_bl
 //ეს ყოველთვის უცვლელია და არის ბოლოში
 
 
-app.listen(process.env.PORT, process.env.IP, function () {  //if server is on
+app.listen(3000, function () {  //if server is on
     console.log("======STARTED======");
 });
