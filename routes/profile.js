@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
 var multer  = require('multer');
-var upload = multer({ dest: 'uploads/img' });
+
 
 router.get("/profile", function(req, res){
    res.render("auth/profile");
@@ -19,9 +19,23 @@ router.put("/profile", function (req, res) {
     })
 });
 
-router.put("/avatar", upload.any("avatar"), function (req, res) {
-    console.log(req.files);
-    res.redirect("back")
+var upload = multer({ dest: 'public/uploads/' }).single("user[pic]");
+router.put("/avatar", function (req, res) {
+
+    upload(req, res, function (err) {
+        if(err){
+            return console.log(err);
+        }
+        var pic = ({pic: req.file.path});
+        User.findByIdAndUpdate(req.user.id, pic, function (err, userPic) {
+            if(err){
+                console.log(err);
+                res.redirect("back")
+            }else{
+                res.redirect("back")
+            }
+        });
+    });
 });
 
 

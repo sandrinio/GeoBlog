@@ -1,39 +1,51 @@
 <%include ../partials/header%>
 
 <div class="container">
-    <div id="tableContainer">
-          <form action="/profile?_method=PUT" enctype="multipart/form-data" method="POST">
-
-              <table class="table table-bordered">
-                  <tr></tr>
-              </table>
+    <!--<div id="tableContainer">-->
+<%var imgURL = currentUser.pic.replace("public/", "")%>
+       <img class="img-thumbnail user-image" src="<%=imgURL%>">
+            <%console.log(imgURL)%>
 
 
+          <table class="table table-striped">
 
-
-
-               <p>Change Office</p>
-                       <select name="user[office]" class="form-control profile-page">
-                           <option> <%= currentUser.office %> </option>
-                           <option> Vake Shop                 </option>
-                           <option> Central Shop              </option>
-                           <option> Gldani Shop               </option>
-                           <option> Marjanishvili Shop        </option>
-                           <option> Rustaveli Shop            </option>
-                           <option> Avlabari Shop             </option>
-                           <option> Ortachala Shop            </option>
-                           <option> Varketili Shop            </option>
-                       </select>
-              <p>Change Tel:</p>
-              <input type="text" name="user[tel]" class="form-control">
-              <input class="btn btn-primary" type="submit" value="Change">
-          </form>
-
-        <!--<form name="user[pic]" enctype="multipart/form-data" action="/avatar?_method=PUT" method="POST">-->
-            <!--<input name="pic" type="file">-->
-            <!--<input class="btn btn-primary" type="submit" value="upload">-->
-        <!--</form>-->
-    </div>
+            <tr>
+                <td></td>
+                <td><h1> Change your info </h1></td>
+            </tr>
+                <form action="/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
+            <tr>
+               <td><strong>Change Picture</strong></td>
+               <td class="picUpload"><input name="user[pic]" type="file"><button class="btn btn-success">Upload</button></td>
+            </tr>
+                </form>
+             <form action="/profile?_method=POST" method="POST" enctype="multipart/form-data">
+             <tr>
+               <td><strong>Change Office</strong></td>
+               <td><select name="user[office]" class="form-control">
+                        <option><%= currentUser.office %></option>
+                        <option>Vake Shop                </option>
+                        <option>Central Shop             </option>
+                        <option>Gldani Shop              </option>
+                        <option>Marjanishvili Shop       </option>
+                        <option>Rustaveli Shop           </option>
+                        <option>Avlabari Shop            </option>
+                        <option>Ortachala Shop           </option>
+                        <option>Varketili Shop           </option>
+                </select></td>
+            </tr>
+            <tr>
+               <td><strong>Change TEL</strong></td>
+               <td><input name="user[tel]" type="text" class="form-control" value="<%= currentUser.tel %>"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input class="btn btn-danger" type="submit" value="Update Info"></tr>
+            </tr>
+            </form>
+          </table>
+      
+    <!--</div>-->
 
 
 
