@@ -2,6 +2,9 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
+var multer  = require('multer');
+var upload = multer({ dest: 'uploads/' });
+
 
 router.get("/", function (req, res) {
    res.render("auth/landing");
@@ -12,6 +15,7 @@ router.get("/new", function (req, res) {
 });
 
 router.post("/new", function (req, res) {
+
    User.register(req.body.user, req.body.password, function (err, user) {
       if(err){
           console.log(err);
@@ -35,8 +39,6 @@ router.get("/logout", function (req, res) {
     //req.flash("success", "Logged Out");
     res.redirect("/");
 });
-
-
 
 
 module.exports = router;

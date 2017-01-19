@@ -2,36 +2,37 @@
 
 <div class="container">
     <div id="tableContainer">
-      <table class="table">
-          <form action="/profile?_method=PUT" method="POST">
-                <tr>
-                   <td>Change Picture</td>
-                </tr>
-                 <tr>
-                   <td>Change Office</td>
-                   <td>
+          <form action="/profile?_method=PUT" enctype="multipart/form-data" method="POST">
+
+              <table class="table table-bordered">
+                  <tr></tr>
+              </table>
+
+
+
+
+
+               <p>Change Office</p>
                        <select name="user[office]" class="form-control profile-page">
-                           <option><%= currentUser.office %></option>
-                           <option>Vake Shop</option>
-                           <option>Central Shop</option>
-                           <option>Gldani Shop</option>
-                           <option>Marjanishvili Shop</option>
-                           <option>Rustaveli Shop</option>
-                           <option>Avlabari Shop</option>
-                           <option>Ortachala Shop</option>
-                           <option>Varketili Shop</option>
+                           <option> <%= currentUser.office %> </option>
+                           <option> Vake Shop                 </option>
+                           <option> Central Shop              </option>
+                           <option> Gldani Shop               </option>
+                           <option> Marjanishvili Shop        </option>
+                           <option> Rustaveli Shop            </option>
+                           <option> Avlabari Shop             </option>
+                           <option> Ortachala Shop            </option>
+                           <option> Varketili Shop            </option>
                        </select>
-                   </td>
-                </tr>
-              <button class="btn btn-primary">Change</button>
-                <tr>
-                   <td>Change Mobile</td>
-                   <td><input type="text" name="user[tel]" class="form-control"></td>
-
-                </tr>
-
+              <p>Change Tel:</p>
+              <input type="text" name="user[tel]" class="form-control">
+              <input class="btn btn-primary" type="submit" value="Change">
           </form>
-      </table>
+
+        <!--<form name="user[pic]" enctype="multipart/form-data" action="/avatar?_method=PUT" method="POST">-->
+            <!--<input name="pic" type="file">-->
+            <!--<input class="btn btn-primary" type="submit" value="upload">-->
+        <!--</form>-->
     </div>
 
 
