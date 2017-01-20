@@ -131,7 +131,6 @@ ul li img {
 
 .table.table-striped {
     max-width: 500px;
-    margin: 80px 20px 20px 20px;
 }
 
 
@@ -139,9 +138,20 @@ ul li img {
     display: inline-flex;
 }
 
-.img-thumbnail.user-image {
+.img-thumbnail.userProfile-image {
     width: 150px;
-    height: 150px;
+    margin: 10px auto;
+}
+
+#profileDiv {
+    max-width: 530px;
+    -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+}
+
+.img-circle#userPic {
+    width: 30px
 }
 
 

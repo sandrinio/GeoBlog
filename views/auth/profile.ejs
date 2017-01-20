@@ -1,12 +1,12 @@
 <%include ../partials/header%>
 
 <div class="container">
-    <!--<div id="tableContainer">-->
-<%var imgURL = currentUser.pic.replace("public/", "")%>
-       <img class="img-thumbnail user-image" src="<%=imgURL%>">
-            <%console.log(imgURL)%>
 
-
+    
+    <div id="profileDiv">
+        
+      <img class="img-thumbnail userProfile-image" src="<%=currentUser.pic.replace("public/", "")%>">
+        
           <table class="table table-striped">
 
             <tr>
@@ -19,7 +19,7 @@
                <td class="picUpload"><input name="user[pic]" type="file"><button class="btn btn-success">Upload</button></td>
             </tr>
                 </form>
-             <form action="/profile?_method=POST" method="POST" enctype="multipart/form-data">
+             <form action="/profile?_method=PUT" method="POST">
              <tr>
                <td><strong>Change Office</strong></td>
                <td><select name="user[office]" class="form-control">
@@ -45,7 +45,7 @@
             </form>
           </table>
       
-    <!--</div>-->
+    </div>
 
 
 

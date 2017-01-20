@@ -6,6 +6,7 @@ var multer  = require('multer');
 
 
 router.get("/profile", function(req, res){
+  
    res.render("auth/profile");
 });
 
@@ -16,7 +17,7 @@ router.put("/profile", function (req, res) {
         }else{
             res.redirect("/profile");
         }
-    })
+    });
 });
 
 var upload = multer({ dest: 'public/uploads/' }).single("user[pic]");
