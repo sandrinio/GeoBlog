@@ -4,9 +4,9 @@
     <form action="/mainPage" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">შეიყვანეთ სათაური ქართულად</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="სათაური">
+            <input name="iPost[title]" type="text" class="form-control" id="exampleInputEmail1" placeholder="სათაური">
         </div>
-        <select class="form-control">
+        <select name="iPost[tag]" class="form-control">
             <option>Android</option>
             <option>Apple / iOS</option>
             <option>Navision</option>
@@ -14,10 +14,10 @@
             <option>FAQ</option>
             <option>Other</option>
         </select>
-        <textarea name="editor"></textarea>
+        <textarea name="iPost[content]"></textarea>
 
         <script>
-            CKEDITOR.replace('editor');
+            CKEDITOR.replace('iPost[content]');
         </script>
 
         <button class="btn btn-default">Submit</button>

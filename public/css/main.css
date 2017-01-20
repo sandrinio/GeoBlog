@@ -154,6 +154,11 @@ ul li img {
     width: 30px
 }
 
+.navbar-nav>li>a .userlink {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 
 
 
