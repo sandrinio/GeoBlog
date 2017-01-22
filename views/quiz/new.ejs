@@ -1,0 +1,53 @@
+<%include ../partials/header%>
+
+<div class="container">
+
+    <form action="/quiz/new" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <input class="form-control" name="test[image1]" type="file">
+        </div>
+
+        <div class="form-group">
+            <label for="questionTitle1">კითხვა 1</label>
+            <textarea name="test[question]" type="textarea" class="form-control" id="questionTitle1" placeholder="შეიყვანეთ შეკითხვა"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="questionTitle2">სავარაუდო პასუხები</label>
+            <textarea name="test[answer1]" type="text" class="form-control" id="questionTitle2" placeholder="პასუხი 1"></textarea>
+        </div>
+        <div class="form-group">
+            <textarea name="test[answer2]" type="text" class="form-control"  placeholder="პასუხი 2"></textarea>
+        </div>
+        <div class="form-group">
+            <textarea name="test[answer3]" type="text" class="form-control"  placeholder="პასუხი 3"></textarea>
+        </div>
+        <div class="form-group">
+            <textarea name="test[answer4]" type="text" class="form-control"  placeholder="პასუხი 4"></textarea>
+        </div>
+        <div class="form-group">
+            <textarea name="test[answer5]" type="text" class="form-control"  placeholder="პასუხი 5"></textarea>
+        </div>
+        <div class="form-group">
+            <textarea name="test[answer6]" type="text" class="form-control"  placeholder="პასუხი 6"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="correctanswer">სწორი პასუხია</label>
+            <select name="test[correctAnswer]" class="form-control" id="questionTitle2">
+                <option>პასუხი 1</option>
+                <option>პასუხი 2</option>
+                <option>პასუხი 3</option>
+                <option>პასუხი 4</option>
+                <option>პასუხი 5</option>
+                <option>პასუხი 6</option>
+            </select>
+        </div>
+
+        <button class="btn btn-default">Submit</button>
+    </form>
+
+
+</div>
+
+
+
+<%include ../partials/footer%>

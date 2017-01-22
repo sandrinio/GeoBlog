@@ -1,8 +1,8 @@
 <%include ../partials/header%>
 
-<%guide.forEach(function (foundPost) { %>
-<h1><%= foundPost.title %></h1>
-<p><%- foundPost.content %></p>
+<% guide.forEach(function (foundPost) { %>
+<h1> <%= foundPost.title %></h1>
+<p> <%- foundPost.content %></p>
 <% })%>
 
 

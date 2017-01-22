@@ -12,7 +12,7 @@ router.get("/mainPage/new", function (req, res) {
 
 router.post("/mainPage", function (req, res) {
     console.log(req.body.iPost);
-   Posts.create(req.body.iPost, function (err, createdPost) {
+    Posts.create(req.body.iPost, function (err, createdPost) {
        if(err){
            return console.log(err);
        }
@@ -21,9 +21,7 @@ router.post("/mainPage", function (req, res) {
    });
 });
 
-router.get("/mainPage/offices", function (req, res) {
-   res.render("mainPage/offices");
-});
+
 
 router.get("/test", function (req, res) {
 
