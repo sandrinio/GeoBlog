@@ -10,8 +10,10 @@ var postsSchema = new mongoose.Schema({
             ref: "User"
             },
         firstname: String,
-        lastname: String
-            }
+        lastname: String,
+        pic: String
+            },
+    date: {type: Date, default: Date.now}
 });
 
 

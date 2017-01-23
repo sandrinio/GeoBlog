@@ -102,12 +102,16 @@
 
   <div class="well well-lg">
     <h1>Hot news and unsolved problems division</h1>
-      <ul>
-        <li>გამოვასწორო ლინკებზე გადასვლის პრობლემა</li>
-        <li>აქტიური ლინკის შეცვლა</li>
-        <li>ckEditor-დან ინფორმაციის ბაზაში შენახვა</li>
-      </ul>
-    <p>will work on vertical slide</p>
+      <ol>
+          <li>დავამთავრო პოსტების დადების ფუნქცია და ვიზუალის ნაწილი</li>
+          <li>კომენტარების ლოგიკის ჩამატება</li>
+          <li>გავაკეთო middlewear და admin შესაძლებლობები, კომენტარების შეცვლა შეეძლება კომენტარის დამწერსაც</li>
+            <li>ჩვენი CR ნაწილის დასრულება</li>
+            <li>ტესტების ვიზუალურად გამოჩენა</li>
+            <li>ქულების დაწერა</li>
+            <li>პასვორდის შეცვლის ფუნქცია</li>
+            <li>დავასრულო ოფისების განყოფილება</li>
+      </ol>
   </div>
 </div>
 </div>
@@ -116,13 +120,14 @@
 
 <h3 id="containerDesc">Guides / News / Methods</h3>
 <div class="container" id="feedsMainContainer">
+<% post.forEach(function (fPost) { %>
   <div class="row">
     <div class="col-md-12" id="feedsContainer">
 
       <div id="blogTitle">
-        <h4><a>Title of the Blog Post</a></h4>
-        <p>Posted By: <em>Sandro Suladze</em></p>
-        <p><em>date goes here</em></p>
+        <h4><a href="/mainPage/<%=fPost._id%>"><%= fPost.title %></a></h4>
+        <p>Posted By: <em><%= fPost.author.firstname + " "+ fPost.author.lastname %></em></p>
+        <p><em><%= fpost.date.toDateString() %></em></p>
         <p>Description:</p>
         <p>Anim pariatur cliche reprehenderit, enim eiusmod high life
           accusamus terry richardson ad squid. 3 wolf moon officia aute,</p>
@@ -133,23 +138,7 @@
 
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-12" id="feedsContainer">
-
-      <div id="blogTitle">
-        <h4><a>Title of the Blog Post</a></h4>
-        <p>Posted By: <em>Sandro Suladze</em></p>
-        <p><em>date goes here</em></p>
-        <p>Description:</p>
-        <span>Anim pariatur cliche reprehenderit, enim eiusmod high life
-          accusamus terry richardson ad squid. 3 wolf moon officia aute,</span>
-      </div>
-      <div id="imageDiv">
-        <img id="feedsImg" src="http://www.funmag.org/wp-content/uploads/2014/10/best-desktop-wallpapers-25-photos-1.jpg">
-      </div>
-
-    </div>
-  </div>
+    <% }) %>
 
 </div>
 
