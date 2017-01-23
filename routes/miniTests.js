@@ -24,7 +24,11 @@ router.get("/quiz/new", function (req, res) {
 });
 
 router.post("/quiz/new", upload.single('test[image1]'), function (req, res) {
-    Quiz.create(req.body.test, function (err, quiz) {
+    var question = req.body.test;
+    question.image1 = req.file.filename;
+    console.log(question);
+
+    Quiz.create(question, function (err, quiz) {
        if(err){
           console.log(err);
        }else{
@@ -32,8 +36,7 @@ router.post("/quiz/new", upload.single('test[image1]'), function (req, res) {
            res.render("quiz/new");
        }
    });
-    res.render("quiz/new");
-});
+ });
 
 
 module.exports = router;

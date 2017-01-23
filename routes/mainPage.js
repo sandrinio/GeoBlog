@@ -16,19 +16,15 @@ router.post("/mainPage", function (req, res) {
        if(err){
            return console.log(err);
        }
-
        res.redirect("/mainPage")
    });
 });
 
 
-
 router.get("/test", function (req, res) {
-
     Posts.find({}, function (err, guide) {
         res.render("mainPage/test", {guide: guide});
     });
-
 });
 
 
