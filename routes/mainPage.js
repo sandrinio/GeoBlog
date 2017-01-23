@@ -13,15 +13,19 @@ router.get("/mainPage", function(req, res){
 
 });
 
+router.get("/mainPage/new", function (req, res) {
+    res.render("mainPage/new")
+});
+
+
+
 router.get("/mainPage/:id", function (req, res) {
     Posts.findById(req.params.id, function (err, guide) {
         res.render("mainPage/show", {guide: guide});
     });
 });
 
-router.get("/mainPage/new", function (req, res) {
-   res.render("mainPage/new")
-});
+
 
 router.post("/mainPage", function (req, res) {
     console.log(req.body.iPost);
@@ -34,8 +38,8 @@ router.post("/mainPage", function (req, res) {
 });
 
 
-router.get("/test", function (req, res) {
-
+router.get("/show", function (req, res) {
+        res.send("coming soon")
 });
 
 

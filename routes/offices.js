@@ -14,12 +14,4 @@ router.get("/offices", function (req, res) {
 });
 
 
-
-
-
-
-
-
-
-
 module.exports = router;

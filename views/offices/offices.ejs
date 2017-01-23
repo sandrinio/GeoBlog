@@ -13,7 +13,14 @@
       </div>
       <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body">
+            <ul>
+                <% user.forEach(function (coworker) { %>
+                <% if(coworker.office === "Vake Shop") { %>
+                     <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                    <% } %>
+                <% }) %>
 
+            </ul>
         </div>
       </div>
     </div>
@@ -28,11 +35,13 @@
       </div>
       <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
         <div class="panel-body">
-
-            <% user.forEach(function (coworker) { %>
-            <% if(coworker.office == "Central Shop") %>
-            <p><a class="btn btn-primery" id="colorChange"><%= coworker.firstname + " " + coworker.lastname %></a></p>
-            <% }) %>
+            <ul>
+                <% user.forEach(function (coworker) { %>
+                <% if(coworker.office === "Central Shop") { %>
+                     <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                     <% } %>
+                <% }) %>
+            </ul>
         </div>
       </div>
     </div>
@@ -47,12 +56,14 @@
       </div>
       <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
         <div class="panel-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-          3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-          Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-          Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-          Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-          raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            <ul>
+                <% user.forEach(function (coworker) { %>
+                <% if(coworker.office === "Rustaveli Shop") { %>
+                    <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                  <% } %>
+                <% }) %>
+
+            </ul>
         </div>
       </div>
     </div>
@@ -67,12 +78,14 @@
       </div>
       <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
         <div class="panel-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-          3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-          Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-          Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-          Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-          raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            <ul>
+                <% user.forEach(function (coworker) { %>
+                <% if(coworker.office === "Gldani Shop") { %>
+                    <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                  <% } %>
+                <% }) %>
+
+            </ul>
         </div>
       </div>
     </div>
@@ -87,12 +100,14 @@
         </div>
         <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
           <div class="panel-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-            3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-            Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-            Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-            raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <ul>
+                  <% user.forEach(function (coworker) { %>
+                  <% if(coworker.office === "Marjanishvili Shop") { %>
+                      <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                    <% } %>
+                  <% }) %>
+
+              </ul>
           </div>
         </div>
       </div>
@@ -107,12 +122,14 @@
         </div>
         <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
           <div class="panel-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-            3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-            Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-            Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-            raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              <ul>
+                  <% user.forEach(function (coworker) { %>
+                  <% if(coworker.office === "Ortachala Shop") { %>
+                       <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                    <% } %>
+                  <% }) %>
+
+              </ul>
           </div>
         </div>
       </div>
@@ -127,12 +144,14 @@
             </div>
             <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
                 <div class="panel-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                    3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                    Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                    Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <ul>
+                        <% user.forEach(function (coworker) { %>
+                        <% if(coworker.office === "Avlabari Shop") { %>
+                           <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                          <% } %>
+                        <% }) %>
+
+                    </ul>
                 </div>
             </div>
        </div>
@@ -147,12 +166,14 @@
             </div>
             <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
                 <div class="panel-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                    3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                    Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                    Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-                    raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <ul>
+                        <% user.forEach(function (coworker) { %>
+                        <% if(coworker.office === "Varketili Shop") { %>
+                            <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                          <% } %>
+                        <% }) %>
+
+                    </ul>
                 </div>
             </div>
         </div>
