@@ -13,6 +13,9 @@
             <option>Must know!</option>
             <option>FAQ</option>
             <option>Other</option>
+            <% if(currentUser.permission === "admin"){ %>
+            <option>HOT</option>
+            <% } %>
         </select>
         <textarea name="iPost[content]"></textarea>
 

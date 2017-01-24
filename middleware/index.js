@@ -1,0 +1,25 @@
+var middlewareObject = {};
+
+    middlewareObject.permissionChecker = function (req, res, next) {
+        if(req.user.permission === "admin"){
+            next();
+            } else {
+                req.flash("error", "no permission");
+                res.redirect("back");
+
+             }
+
+        };
+
+
+middlewareObject.isLoggedIn = function (req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+};
+
+
+
+
+
+module.exports = middlewareObject;

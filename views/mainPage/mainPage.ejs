@@ -82,7 +82,7 @@
   <!--  ========================================================================================================    -->
 
   <div class="well well-lg">
-    <h1>Hot news and unsolved problems division</h1>
+    <h1 id="write">Hot news and unsolved problems division</h1>
       <ol>
           <li>დავამთავრო პოსტების დადების ფუნქცია და ვიზუალის ნაწილი</li>
           <li>კომენტარების ლოგიკის ჩამატება</li>
@@ -108,8 +108,8 @@
       <div id="blogTitle">
         <h4><a href="/mainPage/<%= fPost._id %>"><%=fPost.title%></a></h4>
         <p>Posted By: <em><%= fPost.author.firstname + " " + fPost.author.lastname %></em></p>
-        <p><em><%= fPost.date %></em></p>
-        <p> <%= fPost.tag %> </p>
+        <p><em><%= fPost.date.toDateString() %></em></p>
+        <p id="postTag"> <%= fPost.tag %> </p>
         <p>Anim pariatur cliche reprehenderit, enim eiusmod high life
           accusamus terry richardson ad squid. 3 wolf moon officia aute,</p>
       </div>
