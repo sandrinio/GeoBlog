@@ -177,6 +177,49 @@
                 </div>
             </div>
         </div>
+        
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingNine">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                        კოსტავა
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+                <div class="panel-body">
+                    <ul>
+                        <% user.forEach(function (coworker) { %>
+                        <% if(coworker.office === "Kostava Shop") { %>
+                            <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                          <% } %>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+         <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTen">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                        პეკინი
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseTen">
+                <div class="panel-body">
+                    <ul>
+                        <% user.forEach(function (coworker) { %>
+                        <% if(coworker.office === "Pekini Shop") { %>
+                            <li><a class="btn btn-primery" id="colorChange"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%= coworker.pic %>" ><%= coworker.firstname + " " + coworker.lastname %></a></li>
+                          <% } %>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
     </div>
     
 </div>
