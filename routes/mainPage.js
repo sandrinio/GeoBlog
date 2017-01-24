@@ -20,20 +20,28 @@ router.get("/mainPage/new", function (req, res) {
 
 
 router.get("/mainPage/:id", function (req, res) {
-    Posts.findById(req.params.id, function (err, guide) {
-        res.render("mainPage/show", {guide: guide});
+    Posts.findById(req.params.id, function (err, thisPost) {
+        res.render("mainPage/show", {thisPost: thisPost});
     });
 });
 
 
 
 router.post("/mainPage", function (req, res) {
-    console.log(req.body.iPost);
-    Posts.create(req.body.iPost, function (err, createdPost) {
+    var postContent = req.body.iPost;
+    postContent.author = {
+                    firstname: req.user.firstname,
+                    lastname: req.user.lastname,
+                    pic: req.user.pic,
+                    id: req.user._id
+                         };
+    console.log(postContent);
+    Posts.create(postContent, function (err, createdPost) {
        if(err){
            return console.log(err);
        }
-       res.redirect("/mainPage")
+
+       res.redirect("/mainPage");
    });
 });
 

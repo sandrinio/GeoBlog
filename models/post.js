@@ -4,16 +4,24 @@ var postsSchema = new mongoose.Schema({
     title: String,
     tag: String,
     content: String,
+
     author: {
-        id: {
+            id: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "User"
+                },
+            firstname: String,
+            lastname: String,
+            pic: String
+            },
+    date: {type: Date, default: Date.now},
+
+    comments: [
+        {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
-            },
-        firstname: String,
-        lastname: String,
-        pic: String
-            },
-    date: {type: Date, default: Date.now}
+            ref: "Comment"
+        }
+    ]
 });
 
 

@@ -125,8 +125,8 @@
     <div class="col-md-12" id="feedsContainer">
 
       <div id="blogTitle">
-        <h4><a></a></h4>
-        <p>Posted By: <em></em></p>
+        <h4><a href="/mainPage/<%= fPost._id %>"><%=fPost.title%></a></h4>
+        <p>Posted By: <em><%= fPost.author.firstname + " " + fPost.author.lastname %></em></p>
         <p><em> date</em></p>
         <p>Description:</p>
         <p>Anim pariatur cliche reprehenderit, enim eiusmod high life
