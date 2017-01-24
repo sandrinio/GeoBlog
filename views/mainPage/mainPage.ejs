@@ -13,26 +13,7 @@
       </div>
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body">
-          <!--<table class="table table-bordered">-->
-          <!--  <tr>-->
-          <!--    <th>Billing</th>-->
-          <!--    <td><a href="http://10.40.3.25:7001/myshapecsr/jfn" target="_blank">CSR Portal</a></td>-->
-          <!--    <td><a href="http://cssaccess.intra/channel/jfn" target="_blank">CSR Channel</a></td>-->
-          <!--    <td><a href="http://sbms.intra:8888/ps/sbms/shell.html" target="_blank">Peter-Service</a></td>-->
-          <!--  </tr>-->
-          <!--  <tr>-->
-          <!--    <th>Roaming</th>-->
-          <!--    <td><a href="https://geocell.ge/ge/private/roaming/roaming-partners/roaming-partners-for-lailai-subs" target="_blank">Roaming ლაი-ლაი</a></td>-->
-          <!--    <td><a href="https://geocell.ge/ge/private/roaming/roaming-partners/roaming-partners-for-geocell-subs" target="_blank">Roaming ჯეოსელი</a></td>-->
-          <!--  </tr>-->
-          <!--  <tr>-->
-          <!--    <th>Other</th>-->
-          <!--    <td><a href="http://snserv3.intra/index.php">SMS Log</a></td>-->
-          <!--    <td><a href="http://4g.ge" target="_blank">Invigo</a></td>-->
-          <!--    <td><a href="http://terra.intra/pls/idavapps/IFRAMEWORK.main" target="_blank">Switch info</a></td>-->
-          <!--    <td><a href="http://email.geocell.ge" target="_blank">Geocell Mail</a></td>-->
-          <!--  </tr>-->
-          <!--</table>-->
+          
           <div class="row">
               <div class="col-md-3 col-sm-6" id="links">
                 <ul>
@@ -127,8 +108,8 @@
       <div id="blogTitle">
         <h4><a href="/mainPage/<%= fPost._id %>"><%=fPost.title%></a></h4>
         <p>Posted By: <em><%= fPost.author.firstname + " " + fPost.author.lastname %></em></p>
-        <p><em> date</em></p>
-        <p>Description:</p>
+        <p><em><%= fPost.date %></em></p>
+        <p> <%= fPost.tag %> </p>
         <p>Anim pariatur cliche reprehenderit, enim eiusmod high life
           accusamus terry richardson ad squid. 3 wolf moon officia aute,</p>
       </div>
