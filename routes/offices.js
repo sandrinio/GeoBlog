@@ -1,6 +1,7 @@
 var express = require("express");
 var User = require("../models/user");
 var router = express.Router();
+var middleware = require("../middleware")
 
 
 router.get("/offices", function (req, res) {

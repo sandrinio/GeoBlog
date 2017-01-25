@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var Posts = require("../models/post");
+var middleware = require("../middleware")
 
 router.get("/mainPage", middleware.isLoggedIn, function(req, res){
    Posts.find({}, function (err, post) {

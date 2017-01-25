@@ -4,6 +4,9 @@ var passport = require("passport");
 var User = require("../models/user");
 var multer  = require('multer');
 var path = require('path');
+var middleware = require("../middleware")
+
+
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
