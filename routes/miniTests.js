@@ -20,11 +20,11 @@ router.get("/quiz", function(req, res){
    res.render("quiz/quiz");
 });
 
-router.get("/quiz/new", function (req, res) {
+router.get("/quiz/new", middleware.permissionChecker, function (req, res) {
    res.render("quiz/new");
 });
 
-router.post("/quiz/new", upload.single('test[image1]'), function (req, res) {
+router.post("/quiz/new", middleware.permissionChecker, upload.single('test[image1]'), function (req, res) {
     var question = req.body.test;
     question.image1 = req.file.filename;
     console.log(question);

@@ -11,16 +11,19 @@ router.get("/mainPage", middleware.isLoggedIn, function(req, res){
            res.render("mainPage/mainPage", {post: post});
        }
    });
-
 });
 
-router.get("/mainPage/new", function (req, res) {
+router.get("/mainPage/storeRegForms", function (req, res) {
+    res.render("mainPage/storeRegForms")
+});
+
+router.get("/mainPage/new",  middleware.isLoggedIn, function (req, res) {
     res.render("mainPage/new")
 });
 
 
 
-router.get("/mainPage/:id", function (req, res) {
+router.get("/mainPage/:id", middleware.isLoggedIn, function (req, res) {
     Posts.findById(req.params.id, function (err, thisPost) {
         res.render("mainPage/show", {thisPost: thisPost});
     });
@@ -28,7 +31,7 @@ router.get("/mainPage/:id", function (req, res) {
 
 
 
-router.post("/mainPage", function (req, res) {
+router.post("/mainPage", middleware.isLoggedIn, function (req, res) {
     var postContent = req.body.iPost;
     postContent.author = {
                     firstname: req.user.firstname,
@@ -47,9 +50,11 @@ router.post("/mainPage", function (req, res) {
 });
 
 
-router.get("/show", function (req, res) {
+router.get("/show", middleware.isLoggedIn, function (req, res) {
         res.send("coming soon")
 });
+
+
 
 
 
