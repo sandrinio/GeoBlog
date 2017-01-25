@@ -60,20 +60,12 @@ body {
     box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
 }
 
-.well {
-    border: solid #583C78 0.8px !important;
-    height: 250px;
-}
 
 #containerDesc {
     margin-top: 100px;
     margin-left: 100px;
 }
 
-/*.ulImg {*/
-/*  list-style-type: none; */
-/*  text-decoration: none;*/
-/*}*/
 
 ul li {
     list-style-type: none;
@@ -96,9 +88,6 @@ ul li img {
     font-size: 18px !important;
 }
 
-/*#iHaveToTest {*/
-    /*border: solid 1px black;*/
-/*}*/
 
 
 #links {
@@ -150,7 +139,7 @@ ul li img {
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 }
 
-.img-circle#userPic {
+#userPic {
     width: 30px
 }
 
@@ -181,6 +170,51 @@ ul li img {
     float: right;
 }
 
+.post-container {
+    width: 960px;
+    margin: 20px auto;
+    -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.post-content {
+    width: 960px;
+    margin: 20px auto;
+    -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.glyphicon.glyphicon-calendar {
+    font-size: 18px;
+}
+
+#post-date-time{
+    float: right;
+}
+
+#title-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #7b0682;
+}
+
+.post-comments {
+    width: 960px;
+    margin: 20px auto;
+    -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+}
 
 
 
@@ -189,7 +223,16 @@ ul li img {
 
 
 
-/*====================================================================================*/
+
+
+
+
+
+
+
+
+
+/*============================  navbar remake  ========================================================*/
 
 .navbar.navbar-default {
     background-color: #754c97;
