@@ -171,8 +171,10 @@ ul li img {
 }
 
 .post-container {
-    width: 960px;
-    margin: 20px auto;
+    min-width: 420px;
+    margin-top: 20px;
+    margin-left: 8%;
+    margin-right: 50%;
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
@@ -181,8 +183,9 @@ ul li img {
 }
 
 .post-content {
-    width: 960px;
-    margin: 20px auto;
+    min-width: 420px;
+    margin-left: 8%;
+    margin-right: 8%;
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
@@ -206,8 +209,9 @@ ul li img {
 }
 
 .post-comments {
-    width: 960px;
-    margin: 20px auto;
+    min-width: 420px;
+    margin-left: 8%;
+    margin-right: 8%;
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);

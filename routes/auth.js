@@ -3,19 +3,20 @@ var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
 var multer  = require('multer');
-var upload = multer({ dest: 'uploads/' });
+//var upload = multer({ dest: 'public/uploads/' });
+var middleware = require("../middleware")
+
 
 
 router.get("/", function (req, res) {
    res.render("auth/landing");
 });
 
-router.get("/new", function (req, res) {
+router.get("/new", middleware.permissionChecker, function (req, res) {
    res.render("auth/new");
 });
 
 router.post("/new", function (req, res) {
-
    User.register(req.body.user, req.body.password, function (err, user) {
       if(err){
           console.log(err);

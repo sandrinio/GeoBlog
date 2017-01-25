@@ -45,6 +45,9 @@
         <li><a href="/mainPage/new">Create a Post!</a></li>
         <li><a href="/quiz">Mini Tests</a></li>
         <li><a href="/mainPage/storeRegForms">Registration Forms</a></li>
+        <% if(currentUser.permission === "admin"){ %>
+        <li><a href="/new">Reg. New User</a></li>
+         <% } %>
           </ul>
         </li>
       </ul>
