@@ -88,6 +88,7 @@
         <p><a><%= hPost.title %><br>
               <%= hPost.author.firstname + " " + hPost.author.lastname %>
             </a></p>
+         <img src="http://images.clipshrine.com/download/wheel/medium-exclamation-mark-warning-sign-33.3-15885.png">
       </div>
       <% } %>
       <% }) %>
@@ -107,9 +108,9 @@
 
       <div id="blogTitle">
         <h4><a href="/mainPage/<%= fPost._id %>"><%=fPost.title%></a></h4>
-        <p>Posted By: <em><%= fPost.author.firstname + " " + fPost.author.lastname %></em></p>
-        <p><em><%= fPost.date.toDateString() %></em></p>
-        <p id="postTag"> <%= fPost.tag %> </p>
+          <p><strong>Posted By: </strong><em><%= fPost.author.firstname + " " + fPost.author.lastname %></em></p>
+        <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><em><%= fPost.date.toDateString() %></em></p>
+        <p id="postTag"><strong>Tag: </strong><span class="tag-color"> <%= fPost.tag %> </span></p>
 
       </div>
       <div id="imageDiv">
@@ -119,6 +120,7 @@
         <form class="postDeleteBtn" action="/mainPage/<%= fPost._id %>?_method=DELETE" method="POST">
         <button  class="btn btn-danger">delete</button>
         </form>
+       <a href="/mainPage/<%=fPost._id%>/edit" class="btn btn-warning">Edit</a>
         <% } %>
     </div>
   </div>

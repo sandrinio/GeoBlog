@@ -7,21 +7,34 @@
             <p id="post-date-time"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><%= thisPost.date.toDateString()%></p>
             <hr>
             <p><strong><br> </strong> <img class="img-rounded" id="userPic" src="/uploads/userPictures/<%=thisPost.author.pic%>"> <%= thisPost.author.firstname + " " + thisPost.author.lastname %><br>
-            <span><strong>Tag:   </strong><%= thisPost.tag %> </span></p> <br>
-            
+            <span><strong>Tag:   </strong><span class="tag-color"><%= thisPost.tag %></span> </span></p> <br>
+
+
     </div>
+
     
     <div class="post-content">
+        <div class="btn-containers">
+            <% if(currentUser.permission === "admin") { %>
+            <form class="postDeleteBtn" action="/mainPage/<%= thisPost._id %>?_method=DELETE" method="POST">
+                <button  class="btn btn-danger">delete</button>
+            </form>
+                <a href="/mainPage/<%= thisPost._id %>/edit" class="btn btn-warning">Edit</a>
+            <% } %>
+            <% if(currentUser._id.equals(thisPost.author.id)) { %>
+
+            <a href="/mainPage/<%= thisPost._id %>/edit" class="btn btn-warning">Edit</a>
+
+            <% } %>
+        </div>
         
             <p><%- thisPost.content %></p>
     </div>
     
-    <div class="post-comments">
-        
-        
-        
+    <div class="post-comments-container">
+
     </div>
-    
+
 
 </div>
 

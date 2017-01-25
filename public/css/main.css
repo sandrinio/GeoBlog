@@ -1,6 +1,4 @@
-body {
-    background-color: #c1c1c1;
-}
+
 
 #feedsContainer {
     padding: 5px 10px;
@@ -8,7 +6,6 @@ body {
     width: 96%;
     height: 150px;
     /*border: 2px black solid;*/
-    background-color: #ececec;
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
@@ -45,19 +42,22 @@ body {
 }
 
 #feedsMainContainer {
-    background-color: #ececec;
     margin-bottom: 20px;
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    border-radius: 10px;
+    padding: 20px;
 }
 
 #firstContainer {
-    background-color: #ececec;
+
     margin-bottom: 20px;
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    border-radius: 10px;
+    padding: 20px;
 }
 
 
@@ -159,11 +159,16 @@ ul li img {
 }
 
 .my-own-well {
+    margin-top: 15px;
     display: inline-flex;
     border-radius: 15px;
     border: rebeccapurple solid 1px;
     height: 240px;
     width: 100%;
+}
+
+.my-own-well img{
+    width: 60px;
 }
 
 .postDeleteBtn {
@@ -199,7 +204,7 @@ ul li img {
 }
 
 #post-date-time{
-    float: right;
+    margin-top: 5px;
 }
 
 #title-header {
@@ -208,7 +213,7 @@ ul li img {
     color: #7b0682;
 }
 
-.post-comments {
+.post-comments-container {
     min-width: 420px;
     margin-left: 8%;
     margin-right: 8%;
@@ -220,6 +225,9 @@ ul li img {
     margin-top: 10px;
 }
 
+.tag-color {
+    color: green;
+}
 
 
 
