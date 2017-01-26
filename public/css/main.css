@@ -197,6 +197,7 @@ ul li img {
     border-radius: 10px;
     padding: 20px;
     margin-top: 10px;
+    word-wrap: break-word;
 }
 
 .glyphicon.glyphicon-calendar {
@@ -240,9 +241,17 @@ ul li img {
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
     border-radius: 6px;
     padding: 10px;
+    margin-top: 7px;
+    word-wrap: break-word;
 }
 
+#comment-date {
+    float: right;
+}
 
+.comment-data hr{
+    margin: 10px;
+}
 
 
 
