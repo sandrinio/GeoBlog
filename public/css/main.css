@@ -220,13 +220,26 @@ ul li img {
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
-    border-radius: 10px;
+    border-radius: 2px;
     padding: 20px;
     margin-top: 10px;
+   
 }
 
 .tag-color {
     color: green;
+}
+
+.comment-user-pic {
+    width: 55px;
+}
+
+.comment-data{
+    -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+    border-radius: 6px;
+    padding: 10px;
 }
 
 
