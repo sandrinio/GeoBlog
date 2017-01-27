@@ -228,7 +228,7 @@ ul li img {
 }
 
 .tag-color {
-    color: green;
+    color: #005d80;
 }
 
 .comment-user-pic {
@@ -253,6 +253,9 @@ ul li img {
     margin: 10px;
 }
 
+.post-comment-form {
+    margin-top: 15px;
+}
 
 
 

@@ -33,33 +33,28 @@
     
     <div class="post-comments-container">
         
+       <% thisPost.comments.forEach(function (postComment) { %>
         <div class="comment-data">
-            <span><strong>Sandro Suladze</strong></span>
-            <span id="comment-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><em>Jan 24 2001</em></span>
+            <span><img class="img-rounded" id="userPic" src="../../uploads/userPictures/<%=postComment.author.pic%>"> <strong><%=postComment.author.firstname + " " + postComment.author.lastname%></strong></span>
+            <span id="comment-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><em><%=postComment.date.toDateString() + " " + postComment.date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");%></em></span>
             <hr>
-            <p>jdksajdksajdksahjkdashjkdsahkjdhashdasjhdsajhdjsahdjashdjashdjashdjashjdsahdjashdjsajk</p>
+            <p><%=postComment.text%></p>
         </div>
-        
-        
-        <div class="comment-data">
-            <span><strong>Sandro Suladze</strong></span>
-            <span id="comment-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><em>Jan 24 2001</em></span>
-            <hr>
-            <p>jdksajdksajdksahjkdashjkdsahkjdhashdasjhdsajhdjsahdjashdjashdjashdjashjdsahdjashdjsajkdsjajdslajdksajdklsajdlskajdlasjdsaj</p>
+        <% })%>
+        <div class="post-comment-form">
+            <form action="/mainPage/<%=thisPost._id%>/comments" method="POST">
+                <span><img class="img-rounded" id="userPic" src="../../uploads/userPictures/<%=currentUser.pic%>"> <strong><%=currentUser.firstname + " " + currentUser.lastname%></strong></span>
+                <textarea name="comment[text]" class="form-control" rows="2">
+
+                </textarea>
+                <button class="btn btn-sm btn-primary post-comment-form-btn">Post</button>
+            </form>
         </div>
+
     </div>
-    
-    
 
 </div>
 
-<div>
-    <form>
-    <!--<img src="http://www.planwallpaper.com/static/images/desktop-year-of-the-tiger-images-wallpaper.jpg">-->
-    <textarea class="form-control" rows="2">
-        
-    </textarea>
-    </form>
-</div>
+
 
 <%include ../partials/footer%>

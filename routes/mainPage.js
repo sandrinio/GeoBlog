@@ -1,7 +1,9 @@
 var express = require("express");
 var router = express.Router();
 var Posts = require("../models/post");
-var middleware = require("../middleware")
+var Comment = require("../models/comment");
+var middleware = require("../middleware");
+
 
 router.get("/mainPage", middleware.isLoggedIn, function(req, res){
    Posts.find({}, function (err, post) {
@@ -24,12 +26,15 @@ router.get("/mainPage/new",  middleware.isLoggedIn, function (req, res) {
 
 
 router.get("/mainPage/:id", middleware.isLoggedIn, function (req, res) {
-    Posts.findById(req.params.id, function (err, thisPost) {
-        res.render("mainPage/show", {thisPost: thisPost});
+    Posts.findById(req.params.id).populate("comments").exec(function (err, thisPost) {
+        if(err){
+            req.flash("error", err);
+            console.log("something went wrong")
+        }else {
+            res.render("mainPage/show", {thisPost: thisPost});
+        }
     });
 });
-
-
 
 router.post("/mainPage", middleware.isLoggedIn, function (req, res) {
     var postContent = req.body.iPost;
@@ -50,11 +55,8 @@ router.post("/mainPage", middleware.isLoggedIn, function (req, res) {
 });
 
 
-router.get("/show", middleware.isLoggedIn, function (req, res) {
-        res.send("coming soon")
-});
 
-//  ================== ADMIN PARTS ==================
+//  ================== ADMIN PERMISSIONS ==================
 router.get("/mainPage/:id/edit", middleware.permissionChecker, function (req, res) {
     Posts.findById(req.params.id, function (err, cPost) {
         if(err){
@@ -72,7 +74,7 @@ router.put("/mainPage/:id", function (req, res) {
             req.flash("error", err);
             res.redirect("back")
         }else{
-            req.flash("success", "Post Was modified")
+            req.flash("success", "Post Was modified");
             res.redirect("back");
         }
     })
