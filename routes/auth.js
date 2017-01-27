@@ -4,7 +4,7 @@ var passport = require("passport");
 var User = require("../models/user");
 var multer  = require('multer');
 //var upload = multer({ dest: 'public/uploads/' });
-var middleware = require("../middleware")
+var middleware = require("../middleware");
 
 
 
@@ -24,8 +24,8 @@ router.post("/new", function (req, res) {
           return res.render("auth/new");
       }
       passport.authenticate("local")(req, res, function () {
-          req.flash("success", "User Created: " + user.firstname + " " + (user.lastname))
-           res.redirect("/mainPage");
+          req.flash("success", "User Created");
+           res.redirect("back");
        })
    });
 });

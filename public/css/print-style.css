@@ -1,15 +1,17 @@
 .googleRegContainer {
-    margin-top: 15%;
+    margin-top: 10%;
     margin-left: 28%;
 }
 
 .google-img {
-    width: 400px;
+    width: 350px;
 }
 .textboxContainer {
     margin:0 20%;
 }
-
+#userPic {
+    width: 30px
+}
 
 .h3, h3 {
     font-weight: bold !important;
@@ -17,10 +19,49 @@
 }
 
 .warning {
-    float: right;
-    border: 1px solid black;
-    width: 100px;
+    margin-top: 10%;
+    margin-left: 50%;
+    display: inline-flex;
 }
+.fa.fa-exclamation {
+    font-size: 60px;
+    margin-right: 7px;
+    margin-top: -2px;
+    color: darkred;
+}
+
+#newPost-color {
+    color: white;
+    border:1px solid #00a87d;
+    background-color: #00a87d;
+    padding: 8px 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
+}
+#newPost-color:hover {
+    background-color: #00c58f;
+    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 input[type=text] {
     width: 100%;

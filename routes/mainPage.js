@@ -19,6 +19,11 @@ router.get("/mainPage/storeRegForms", function (req, res) {
     res.render("mainPage/storeRegForms")
 });
 
+router.get("/mainPage/appStore", function (req, res) {
+    res.render("mainPage/appStore")
+});
+
+
 router.get("/mainPage/new",  middleware.isLoggedIn, function (req, res) {
     res.render("mainPage/new")
 });

@@ -99,9 +99,8 @@ ul li img {
 }
 
 
-.regFormContainer {
-    max-width: 500px;
-    min-width: 300px;
+div#regFormContainer {
+    width: 300px;
     margin: 10% auto;
 }
 
@@ -218,9 +217,9 @@ ul li img {
     min-width: 420px;
     margin-left: 8%;
     margin-right: 8%;
-    -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
-    -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
-    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.45);
     border-radius: 2px;
     padding: 20px;
     margin-top: 10px;
@@ -228,7 +227,16 @@ ul li img {
 }
 
 .tag-color {
-    color: #005d80;
+    color: #73d047;
+}
+
+.tag-color:hover {
+    color: #4e9c32;
+}
+
+a.userLink {
+    margin: 0;
+    padding: 0;
 }
 
 .comment-user-pic {
@@ -238,11 +246,24 @@ ul li img {
 .comment-data{
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
-    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.45);
     border-radius: 6px;
     padding: 10px;
     margin-top: 7px;
     word-wrap: break-word;
+}
+
+#newPost-color {
+    color: white;
+    border:1px solid #00a87d;
+    background-color: #00a87d;
+    padding: 8px 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
+}
+#newPost-color:hover {
+    background-color: #00c58f;
+    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 }
 
 #comment-date {
@@ -257,7 +278,9 @@ ul li img {
     margin-top: 15px;
 }
 
-
+.btn-warning {
+    float: right;
+}
 
 
 

@@ -4,6 +4,9 @@
   <title>Our Blog</title>
   <link rel="stylesheet" href="../../css/main.css" type="text/css">
 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
   integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
   crossorigin="anonymous">
@@ -32,11 +35,16 @@
       <ul class="nav navbar-nav">
         <li><a href="/mainPage">Home <span class="sr-only"></span></a></li>
         <li><a href="/offices">Geocell Offices</a></li>
-        <li><a href="/mainPage/new">Create a Post!</a></li>
         <li><a href="/quiz">Mini Tests</a></li>
-        <li><a href="/mainPage/storeRegForms">Registration Forms</a></li>
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registration Forms<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li><a href="/mainPage/storeRegForms">Google</a></li>
+                  <li><a href="/mainPage/appStore">App store</a></li>
+                  <li><a href="#">Windows</a></li>
+              </ul>
         <% if(currentUser.permission === "admin"){ %>
-        <li><a href="/new">Reg. New User</a></li>
+        <li><a href="/new"><span class="tag-color">Reg. New User</span></a></li>
          <% } %>
           </ul>
         </li>
@@ -45,6 +53,7 @@
         <% return string.charAt(0).toUpperCase() + string.slice(1); %>
         <% } %>
       <ul class="nav navbar-nav navbar-right">
+          <li><a href="/mainPage/new"><span id="newPost-color">New Post!</span></a></li>
           <% if(currentUser && currentUser.pic !== ""){ %>
 
           <li><a class="userlink" href="/profile"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%=currentUser.pic%>"><em><%=capitalizeFirstLetter(currentUser.firstname) + " " + capitalizeFirstLetter(currentUser.lastname)%></em></a></li>
