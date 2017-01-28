@@ -152,9 +152,10 @@ div#regFormContainer {
     height: 200px;
     margin-top: 20px;
     margin-left: 20px;
-    -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
-    -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
-    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+    padding: 10px;
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.45);
 }
 
 .my-own-well {
@@ -326,7 +327,10 @@ box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 }
 
 
+.hotNewsBtns {
+    margin-top: 70px;
 
+}
 
 
 

@@ -85,10 +85,17 @@
       <% post.forEach(function (hPost) { %>
       <% if(hPost.tag === "HOT") { %>
      <div class="hotNewsContainer">
-        <p><a><%= hPost.title %><br>
-              <%= hPost.author.firstname + " " + hPost.author.lastname %>
-            </a></p>
-         <img src="http://images.clipshrine.com/download/wheel/medium-exclamation-mark-warning-sign-33.3-15885.png">
+
+       <h4><a><%= hPost.title %></a></h4>
+       <p><a><%= hPost.author.firstname + " " + hPost.author.lastname %></a></p>
+         <% if(currentUser.permission === "admin") { %>
+         <div class="hotNewsBtns">
+         <form action="/mainPage/<%= hPost._id %>?_method=DELETE" method="POST">
+             <a>delete</a>
+         </form>
+         <a href="/mainPage/<%=hPost._id%>/edit">Edit</a>
+         </div>
+         <% } %>
       </div>
       <% } %>
       <% }) %>
