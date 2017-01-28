@@ -15,11 +15,11 @@ router.get("/mainPage", middleware.isLoggedIn, function(req, res){
    });
 });
 
-router.get("/mainPage/storeRegForms", function (req, res) {
+router.get("/mainPage/storeRegForms", middleware.isLoggedIn,function (req, res) {
     res.render("mainPage/storeRegForms")
 });
 
-router.get("/mainPage/appStore", function (req, res) {
+router.get("/mainPage/appStore", middleware.isLoggedIn, function (req, res) {
     res.render("mainPage/appStore")
 });
 

@@ -30,7 +30,7 @@
     color: darkred;
 }
 
-#newPost-color {
+.btnStyle {
     color: white;
     border:1px solid #00a87d;
     background-color: #00a87d;
@@ -38,7 +38,7 @@
     border-radius: 5px;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
 }
-#newPost-color:hover {
+.btnStyle:hover {
     background-color: #00c58f;
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 }

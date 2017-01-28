@@ -177,6 +177,7 @@ div#regFormContainer {
 .post-container {
     min-width: 420px;
     margin-top: 20px;
+    height: 200px;
     margin-left: 8%;
     margin-right: 50%;
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
@@ -253,7 +254,7 @@ a.userLink {
     word-wrap: break-word;
 }
 
-#newPost-color {
+#btnStyle {
     color: white;
     border:1px solid #00a87d;
     background-color: #00a87d;
@@ -261,7 +262,7 @@ a.userLink {
     border-radius: 5px;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
 }
-#newPost-color:hover {
+#btnStyle:hover {
     background-color: #00c58f;
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 }
@@ -282,8 +283,19 @@ a.userLink {
     float: right;
 }
 
+.btn-primary.btnStyle {
+    color: white;
+    border:1px solid #00a87d;
+    background-color: #00a87d;
+    padding: 8px 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
+}
+.btn-primary.btnStyle {
+background-color: #00c58f;
+box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 
-
+}
 
 
 

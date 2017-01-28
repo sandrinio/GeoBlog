@@ -44,7 +44,7 @@
                   <li><a href="#">Windows</a></li>
               </ul>
         <% if(currentUser.permission === "admin"){ %>
-        <li><a href="/new"><span class="tag-color">Reg. New User</span></a></li>
+        <li><a href="/new"><span class="btnStyle">New User</span></a></li>
          <% } %>
           </ul>
         </li>
@@ -53,7 +53,7 @@
         <% return string.charAt(0).toUpperCase() + string.slice(1); %>
         <% } %>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="/mainPage/new"><span id="newPost-color">New Post!</span></a></li>
+          <li><a href="/mainPage/new"><span id="btnStyle">New Post!</span></a></li>
           <% if(currentUser && currentUser.pic !== ""){ %>
 
           <li><a class="userlink" href="/profile"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%=currentUser.pic%>"><em><%=capitalizeFirstLetter(currentUser.firstname) + " " + capitalizeFirstLetter(currentUser.lastname)%></em></a></li>
