@@ -46,7 +46,7 @@ router.post("/mainPage", middleware.isLoggedIn, function (req, res) {
     postContent.author = {
                     firstname: req.user.firstname,
                     lastname: req.user.lastname,
-                    pic: req.user.pic,
+                    pic: "placeholderImg.png",
                     id: req.user._id
                          };
     console.log(postContent);
@@ -54,7 +54,7 @@ router.post("/mainPage", middleware.isLoggedIn, function (req, res) {
        if(err){
            return console.log(err);
        }
-
+        req.flash("success", "Good Job :)")
        res.redirect("/mainPage");
    });
 });

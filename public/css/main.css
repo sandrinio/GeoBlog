@@ -262,6 +262,7 @@ a.userLink {
     border-radius: 5px;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
 }
+
 #btnStyle:hover {
     background-color: #00c58f;
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
@@ -296,6 +297,45 @@ background-color: #00c58f;
 box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 
 }
+
+.programLinks {
+    padding: 0;
+}
+
+.programLinks li{
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
+    border-radius: 5px;
+    padding: 2px 1px 2px 10px;
+    margin-top: 5px;
+    color: white;
+    background-color: #00a87d;
+}
+
+.programLinks li:hover {
+    background-color: #00c58f;
+}
+
+.programLinks li a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.programLinks li:first-child {
+    background-color: rgba(59, 118, 103, 1)
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

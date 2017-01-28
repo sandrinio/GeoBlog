@@ -1,3 +1,6 @@
 
+function printFunction() {
+    window.print();
+}
 
 
