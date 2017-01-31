@@ -5,11 +5,14 @@
     <a class="btn btn-warning" href="/quiz/new">Add test questions</a>
     <% } %>
 
-
-    
-
-
-
+    <% quiz.forEach(function (test) { %>
+    <h1><%= test.question %></h1>
+    <p><%= test.answer1 %></p>
+    <p><%= test.answer2 %></p>
+    <p><%= test.answer3 %></p>
+    <p><%= test.answer4 %></p>
+    <p><%= test.answer5 %></p>
+    <% }); %>
 
 
 </div>

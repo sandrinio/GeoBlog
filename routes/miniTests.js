@@ -17,7 +17,16 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 router.get("/quiz", function(req, res){
-   res.render("quiz/quiz");
+    Quiz.find({}, function (err, quiz) {
+        if(err){
+            req.flash("error", err);
+            console.log(err)
+        }else{
+            res.render("quiz/quiz", {quiz: quiz});
+        }
+    });
+
+
 });
 
 router.get("/quiz/new", middleware.permissionChecker, function (req, res) {

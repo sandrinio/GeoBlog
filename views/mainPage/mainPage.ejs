@@ -84,18 +84,18 @@
   <div class="my-own-well">
       <% post.forEach(function (hPost) { %>
       <% if(hPost.tag === "HOT") { %>
-     <div class="hotNewsContainer">
+         <div class="hotNewsContainer">
 
-       <h4><a><%= hPost.title %></a></h4>
-       <p><a><%= hPost.author.firstname + " " + hPost.author.lastname %></a></p>
-         <% if(currentUser.permission === "admin") { %>
-         <div class="hotNewsBtns">
-         <form action="/mainPage/<%= hPost._id %>?_method=DELETE" method="POST">
-             <a>delete</a>
-         </form>
-         <a href="/mainPage/<%=hPost._id%>/edit">Edit</a>
-         </div>
-         <% } %>
+          <h4><a><%= hPost.title %></a></h4>
+          <p><a><%= hPost.author.firstname + " " + hPost.author.lastname %></a></p>
+          <% if(currentUser.permission === "admin") { %>
+          <div class="hotNewsBtns">
+              <form action="/mainPage/<%= hPost._id %>?_method=DELETE" method="POST">
+                  <a>delete</a>
+              </form>
+              <a href="/mainPage/<%=hPost._id%>/edit">Edit</a>
+          </div>
+          <% } %>
       </div>
       <% } %>
       <% }) %>
