@@ -5,16 +5,10 @@ var mongoose = require("mongoose");
 
 var quizSchema = new mongoose.Schema({
 
-     image1: String,
-     image2: String,
+     image: String,
      question: String,
-     answer1: String,
-     answer2: String,
-     answer3: String,
-     answer4: String,
-     answer5: String,
-     answer6: String
-
+     answers: {},
+     correctAnswer: String
 });
 
 

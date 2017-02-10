@@ -5,14 +5,16 @@
     <a class="btn btn-warning" href="/quiz/new">Add test questions</a>
     <% } %>
 
-    <% quiz.forEach(function (test) { %>
-    <h1><%= test.question %></h1>
-    <p><%= test.answer1 %></p>
-    <p><%= test.answer2 %></p>
-    <p><%= test.answer3 %></p>
-    <p><%= test.answer4 %></p>
-    <p><%= test.answer5 %></p>
-    <% }); %>
+
+       <% quiz.answers.forEach(function (testAnswers) { %>
+    <!--<div class="radio">-->
+        <!--<label>-->
+            <!--<input type="radio" name="optionsRadios" id="optionsRadios1" value="option">-->
+            <!---->
+        <!--</label>-->
+    <!--</div>-->
+      <% }) %>
+
 
 
 </div>

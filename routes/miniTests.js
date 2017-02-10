@@ -33,19 +33,28 @@ router.get("/quiz/new", middleware.permissionChecker, function (req, res) {
    res.render("quiz/new");
 });
 
-router.post("/quiz/new", middleware.permissionChecker, upload.single('test[image1]'), function (req, res) {
-    var question = req.body.test;
-    question.image1 = req.file.filename;
-    console.log(question);
+router.post("/quiz/new", middleware.permissionChecker, upload.single('image'), function (req, res) {
 
-    Quiz.create(question, function (err, quiz) {
-       if(err){
-          console.log(err);
-       }else{
-           console.log(quiz);
-           res.render("quiz/new");
-       }
-   });
+
+    var content = {};
+
+    content.question = req.body.question;
+    content.answers = req.body.test;
+    content.correctAnswer = req.body.correctAnswer;
+
+    console.log(content);
+
+
+
+
+   //  Quiz.create(content, function (err, quiz) {
+  //     if(err){
+  //        console.log(err);
+  //     }else{
+  //         console.log(quiz);
+  //         res.render("quiz/new");
+  //     }
+  // });
  });
 
 
