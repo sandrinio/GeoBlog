@@ -4,12 +4,12 @@
 
     <form action="/quiz/new" method="POST" enctype="multipart/form-data">
         <div class="form-group">
-            <input class="form-control" name="test[image1]" type="file">
+            <input class="form-control" name="image" type="file">
         </div>
 
         <div class="form-group">
             <label for="questionTitle1">კითხვა 1</label>
-            <textarea name="test[question]" type="textarea" class="form-control" id="questionTitle1" placeholder="შეიყვანეთ შეკითხვა"></textarea>
+            <textarea name="question" type="textarea" class="form-control" id="questionTitle1" placeholder="შეიყვანეთ შეკითხვა"></textarea>
         </div>
         <div class="form-group">
             <label for="questionTitle2">სავარაუდო პასუხები</label>
@@ -31,8 +31,8 @@
             <textarea name="test[answer6]" type="text" class="form-control"  placeholder="პასუხი 6"></textarea>
         </div>
         <div class="form-group">
-            <label for="correctanswer">სწორი პასუხია</label>
-            <select name="test[correctAnswer]" class="form-control" id="questionTitle2">
+            <label for="correctAnswer">სწორი პასუხია</label>
+            <select name="correctAnswer" class="form-control" id="questionTitle2">
                 <option>პასუხი 1</option>
                 <option>პასუხი 2</option>
                 <option>პასუხი 3</option>

@@ -5,6 +5,7 @@ var User = require("../models/user");
 var multer  = require('multer');
 //var upload = multer({ dest: 'public/uploads/' });
 var middleware = require("../middleware");
+var flash = require("connect-flash");
 
 
 

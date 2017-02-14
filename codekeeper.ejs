@@ -1,12 +1,19 @@
-<% quiz.forEach(function (test) { %>
+<div class="my-own-well">
+      <% post.forEach(function (hPost) { %>
+      <% if(hPost.tag === "HOT") { %>
+         <div class="hotNewsContainer">
 
-
-<img src="/uploads/quizPictures/<%= test.image1 %>">
-<h1><%= test.question %></h1>
-<p><%= test.answer1 %></p>
-<p><%= test.answer2 %></p>
-<p><%= test.answer3 %></p>
-<p><%= test.answer4 %></p>
-<p><%= test.answer5 %></p>
-
-<% })%>
+          <h4><a><%= hPost.title %></a></h4>
+          <p><a><%= hPost.author.firstname + " " + hPost.author.lastname %></a></p>
+          <% if(currentUser.permission === "admin") { %>
+          <div class="hotNewsBtns">
+              <form action="/mainPage/<%= hPost._id %>?_method=DELETE" method="POST">
+                  <a>delete</a>
+              </form>
+              <a href="/mainPage/<%=hPost._id%>/edit">Edit</a>
+          </div>
+          <% } %>
+      </div>
+      <% } %>
+      <% }) %>
+  </div>

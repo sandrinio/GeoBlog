@@ -147,16 +147,6 @@ div#regFormContainer {
     padding-bottom: 0;
 }
 
-.hotNewsContainer {
-    width: 150px;
-    height: 200px;
-    margin-top: 20px;
-    margin-left: 20px;
-    padding: 10px;
-    -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.45);
-    -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.45);
-    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.45);
-}
 
 .my-own-well {
     margin-top: 15px;
@@ -269,6 +259,19 @@ a.userLink {
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 }
 
+#btnStyleSmall {
+    color: white;
+    border:1px solid #00a87d;
+    background-color: #00a87d;
+    padding: 4px 13px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
+}
+#btnStyleSmall:hover {
+    background-color: #00c58f;
+    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+}
+
 #comment-date {
     float: right;
 }
@@ -327,13 +330,15 @@ box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 }
 
 
-.hotNewsBtns {
-    margin-top: 70px;
-
+.searchBar {
+    background-color: #754c97;
+    border-radius: 5px;
 }
 
-
-
+.searchBar h5 {
+    display: inline-block;
+    color: white;
+}
 
 
 

@@ -13,6 +13,7 @@ var mongoose       = require("mongoose"),
 
 
 
+
 var authRoutes    = require("./routes/auth"),
     mainRoutes    = require("./routes/mainPage"),
     profileRoutes = require("./routes/profile"),
@@ -65,6 +66,6 @@ mongoose.connect("mongodb://sandro:sandro1234@ds054479.mlab.com:54479/geocell_bl
 //ეს ყოველთვის უცვლელია და არის ბოლოში
 
 
-app.listen(process.env.PORT, process.env.IP,function () {  //if server is on
+app.listen(process.env.PORT || 3000, process.env.IP,function () {  //if server is on
     console.log("======STARTED======");
 });

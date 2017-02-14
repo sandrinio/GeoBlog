@@ -6,14 +6,27 @@ var middleware = require("../middleware");
 
 
 router.get("/mainPage", middleware.isLoggedIn, function(req, res){
-   Posts.find({}, function (err, post) {
-       if(err){
+Posts.find({}).sort('-date').exec(function(err, post) {
+    if(err){
            console.log(err);
        }else{
            res.render("mainPage/mainPage", {post: post});
        }
    });
 });
+
+
+
+// router.post('/mainPage/search', middleware.isLoggedIn, function(req, res){
+//     Posts.findOne({'tag': req.body.tagName}, function (err, post) {
+//         if(err){
+//             return console.log(err)
+//         }
+//         res.render('mainPage/mainPage', {post: post})
+        
+//     });
+// });
+
 
 router.get("/mainPage/storeRegForms", middleware.isLoggedIn,function (req, res) {
     res.render("mainPage/storeRegForms")
@@ -58,6 +71,8 @@ router.post("/mainPage", middleware.isLoggedIn, function (req, res) {
        res.redirect("/mainPage");
    });
 });
+
+
 
 
 
