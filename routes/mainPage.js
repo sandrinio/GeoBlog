@@ -3,7 +3,7 @@ var router = express.Router();
 var Posts = require("../models/post");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
-
+var multer = require('multer');
 
 router.get("/mainPage", middleware.isLoggedIn, function(req, res){
 Posts.find({}).sort('-date').exec(function(err, post) {
@@ -17,13 +17,15 @@ Posts.find({}).sort('-date').exec(function(err, post) {
 
 
 
-// router.post('/mainPage/search', middleware.isLoggedIn, function(req, res){
+
+// ===========  SEARCH MAINPAGE    ===========
+// router.post('/mainPage/:id', middleware.isLoggedIn, function(req, res){
 //     Posts.findOne({'tag': req.body.tagName}, function (err, post) {
 //         if(err){
 //             return console.log(err)
 //         }
 //         res.render('mainPage/mainPage', {post: post})
-        
+//
 //     });
 // });
 
@@ -54,6 +56,14 @@ router.get("/mainPage/:id", middleware.isLoggedIn, function (req, res) {
     });
 });
 
+
+
+router.post('/mainPage/imgLinkGenerator', middleware.isLoggedIn, function (req, res) {
+
+});
+
+
+
 router.post("/mainPage", middleware.isLoggedIn, function (req, res) {
     var postContent = req.body.iPost;
     postContent.author = {
@@ -71,6 +81,7 @@ router.post("/mainPage", middleware.isLoggedIn, function (req, res) {
        res.redirect("/mainPage");
    });
 });
+
 
 
 

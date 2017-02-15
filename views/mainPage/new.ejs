@@ -1,6 +1,11 @@
 <%include ../partials/header%>
 
 <div class="container">
+    <form method="POST" action="#">
+        <input type="file" id="browse" formenctype="multipart/form-data">
+        <input type="submit" id="submitBtn" value='Generate Image Link'>
+    </form>
+    <div id="preview"></div>
     <form action="/mainPage" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">შეიყვანეთ სათაური ქართულად</label>
@@ -13,6 +18,7 @@
             <option>Must know!</option>
             <option>FAQ</option>
             <option>Other</option>
+            <option>Billing</option>
             <% if(currentUser.permission === "admin"){ %>
             <option>HOT</option>
             <% } %>

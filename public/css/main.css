@@ -51,7 +51,7 @@
 }
 
 #firstContainer {
-
+    margin-top: 20px;
     margin-bottom: 20px;
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
@@ -118,7 +118,7 @@ div#regFormContainer {
 }
 
 .table.table-striped {
-    max-width: 500px;
+    width: 100%;
 }
 
 
@@ -132,7 +132,8 @@ div#regFormContainer {
 }
 
 #profileDiv {
-    max-width: 530px;
+    margin-top: 20px;
+    width: 100%;
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
@@ -340,7 +341,9 @@ box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
     color: white;
 }
 
-
+#preview img{
+    width: 100px;
+}
 
 
 
@@ -353,6 +356,7 @@ box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 
 .navbar.navbar-default {
     background-color: #754c97;
+    margin-bottom: 0;
 }
 
 .navbar.navbar-default .navbar-collapse, .navbar-default .navbar-form {

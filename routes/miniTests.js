@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var Quiz = require("../models/quiz");
+var Posts = require('../models/post');
 var multer = require('multer');
 var path = require('path');
 var middleware = require("../middleware");
@@ -17,16 +18,13 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 router.get("/quiz", function(req, res){
-    Quiz.find({}, function (err, quiz) {
-        if(err){
-            req.flash("error", err);
-            console.log(err)
-        }else{
-            res.render("quiz/quiz", {quiz: quiz});
-        }
-    });
-
-
+  Posts.find({'tag': 'Android'}, function(err, post) {
+    if(err){
+      console.log(err);
+    }else{
+      res.render("quiz/quiz", {post: post});
+    }
+  });
 });
 
 router.get("/quiz/new", middleware.permissionChecker, function (req, res) {
