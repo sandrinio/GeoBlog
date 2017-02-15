@@ -106,9 +106,9 @@
 <!--  ========================================================================================================    -->
 <div class='container'>
     <div class='searchBar'>
-      <form action='/mainPage/search' method='POST'>
+      <form action='/mainPage/search' id="searchForm" method='POST'>
         <h5>Search by Tag</h5>
-        <select name="tagName">
+        <select name="tagName" id="tagName">
                 <option>none</option>
                 <option>Android</option>
                 <option>Apple / iOS</option>
@@ -118,6 +118,7 @@
                 <option>FAQ</option>
                 <option>Other</option>
         </select>
+          <span id="testText"></span>
           <input type='submit' id='btnStyleSmall' value='Search'>
       </form>
     </div>

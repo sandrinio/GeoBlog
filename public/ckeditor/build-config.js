@@ -78,7 +78,6 @@ var CKBUILDER_CONFIG = {
 		'tabletools' : 1,
 		'toolbar' : 1,
 		'undo' : 1,
-		'uploadfile' : 1,
 		'wysiwygarea' : 1
 	},
 	languages : {

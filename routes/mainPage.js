@@ -3,28 +3,39 @@ var router = express.Router();
 var Posts = require("../models/post");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
-var multer = require('multer');
+var path = require('path');
+var multer  =   require('multer');
+
+var storage =   multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, 'public/uploads/postContentPhotos/');
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+var upload = multer({ storage : storage}).single('contentPhoto');
 
 router.get("/mainPage", middleware.isLoggedIn, function(req, res){
-Posts.find({}).sort('-date').exec(function(err, post) {
-    if(err){
-           console.log(err);
-       }else{
-           res.render("mainPage/mainPage", {post: post});
-       }
-   });
+    console.log();
+    Posts.find({}).sort('-date').exec(function (err, post) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("mainPage/mainPage", {post: post});
+      }
+    });
 });
 
 
 
 
 // ===========  SEARCH MAINPAGE    ===========
-// router.post('/mainPage/:id', middleware.isLoggedIn, function(req, res){
+// router.post('/mainPage/search', middleware.isLoggedIn, function(req, res){
 //     Posts.findOne({'tag': req.body.tagName}, function (err, post) {
 //         if(err){
 //             return console.log(err)
 //         }
-//         res.render('mainPage/mainPage', {post: post})
 //
 //     });
 // });
@@ -58,8 +69,14 @@ router.get("/mainPage/:id", middleware.isLoggedIn, function (req, res) {
 
 
 
-router.post('/mainPage/imgLinkGenerator', middleware.isLoggedIn, function (req, res) {
-
+router.post('/mainPage/imgLinkGenerator', function (req, res) {
+  upload(req,res,function(err) {
+    if(err) {
+      return res.end("Error uploading file.");
+    }
+     res.end("File URL: " + req.file.path);
+    console.log(req.file)
+  });
 });
 
 

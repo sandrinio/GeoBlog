@@ -1,11 +1,14 @@
 <%include ../partials/header%>
 
 <div class="container">
-    <form method="POST" action="#">
-        <input type="file" id="browse" formenctype="multipart/form-data">
-        <input type="submit" id="submitBtn" value='Generate Image Link'>
+    <form id="uploadForm"
+          enctype="multipart/form-data"
+          action="/mainPage/imgLinkGenerator"
+          method="post">
+        <input type="file" name="contentPhoto" />
+        <input type="submit" value="Upload Image" name="submit">
+        <span id="status"></span>
     </form>
-    <div id="preview"></div>
     <form action="/mainPage" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">შეიყვანეთ სათაური ქართულად</label>

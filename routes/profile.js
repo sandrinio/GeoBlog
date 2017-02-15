@@ -16,8 +16,6 @@ var storage = multer.diskStorage({
         cb(null, req.user.firstname + req.user.lastname + path.extname(file.originalname));
     }
 });
-
-
 var upload = multer({ storage: storage });
 
 router.get("/profile", function(req, res){
