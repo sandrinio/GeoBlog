@@ -50,6 +50,14 @@
     padding: 20px;
 }
 
+#feedsMainContainer h4{
+    display: inline-block;
+}
+
+.blogPostButtons {
+    float: right;
+}
+
 #firstContainer {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -162,9 +170,6 @@ div#regFormContainer {
     width: 60px;
 }
 
-.postDeleteBtn {
-    float: right;
-}
 
 .post-container {
     min-width: 420px;

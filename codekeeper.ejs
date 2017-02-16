@@ -17,3 +17,31 @@
       <% } %>
       <% }) %>
   </div>
+
+
+
+<% post.forEach(function (fPost) { %>
+<% if(fPost.tag !== "HOT") { %>
+<div class="row">
+    <div class="col-md-12" id="feedsContainer">
+
+        <div id="blogTitle">
+            <h4><a href="/mainPage/<%= fPost._id %>"><%=fPost.title%></a></h4>
+            <p><strong>Posted By: </strong><em><%= fPost.author.firstname + " " + fPost.author.lastname %></em></p>
+            <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><em><%= fPost.date.toDateString() %></em></p>
+            <p id="postTag"><strong>Tag: </strong><span class="tag-color"> <%= fPost.tag %> </span></p>
+
+        </div>
+        <div id="imageDiv">
+            <img id="feedsImg" src="https://s-media-cache-ak0.pinimg.com/originals/b8/50/30/b850301ece5049b28010e96970273ab6.jpg">
+        </div>
+        <% if(currentUser.permission === "admin") { %>
+        <form class="postDeleteBtn" action="/mainPage/<%= fPost._id %>?_method=DELETE" method="POST">
+            <button  class="btn btn-danger">delete</button>
+        </form>
+        <a href="/mainPage/<%=fPost._id%>/edit" class="btn btn-warning">Edit</a>
+        <% } %>
+    </div>
+</div>
+<% } %>
+<% }) %>

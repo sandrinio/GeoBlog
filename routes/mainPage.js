@@ -17,16 +17,65 @@ var storage =   multer.diskStorage({
 var upload = multer({ storage : storage}).single('contentPhoto');
 
 router.get("/mainPage", middleware.isLoggedIn, function(req, res){
-    console.log();
-    Posts.find({}).sort('-date').exec(function (err, post) {
+  if(req.query.tagName == undefined || req.query.tagName === 'none'){
+    Posts.find({}).sort('-date').exec(function (err, bpost) {
       if (err) {
         console.log(err);
       } else {
-        res.render("mainPage/mainPage", {post: post});
+        var totalBlogPostsCount = bpost.length,
+          pageSize = 4,
+          pageCount = totalBlogPostsCount / pageSize + 1,
+          currentPage = 1,
+          blogPostsArray = [],
+          blogPostsList = [];
+
+        while (bpost.length > 0) {
+          blogPostsArray.push(bpost.splice(0, pageSize));
+        }
+        if (typeof req.query.page !== 'undefined') {
+          currentPage = +req.query.page;
+        }
+        blogPostsList = blogPostsArray[+currentPage - 1];
+
+        res.render("mainPage/mainPage", {
+          bpost: blogPostsList,
+          pageSize: pageSize,
+          totalBlogPostsCount: totalBlogPostsCount,
+          pageCount: pageCount,
+          currentPage: currentPage
+        });
       }
     });
-});
+  } else {
+    Posts.findOne({'tag': req.query.tagName}, function (err, bpost) {
+      if (err) {
+        console.log(err);
+      } else {
+        var totalBlogPostsCount = bpost.length,
+          pageSize = 4,
+          pageCount = totalBlogPostsCount / pageSize + 1,
+          currentPage = 1,
+          blogPostsArray = [],
+          blogPostsList = [];
 
+        while (bpost.length > 0) {
+          blogPostsArray.push(bpost.splice(0, pageSize));
+        }
+        if (typeof req.query.page !== 'undefined') {
+          currentPage = +req.query.page;
+        }
+        blogPostsList = blogPostsArray[+currentPage - 1];
+        res.render("mainPage/mainPage", {
+          bpost: blogPostsList,
+          pageSize: pageSize,
+          totalBlogPostsCount: totalBlogPostsCount,
+          pageCount: pageCount,
+          currentPage: currentPage
+        });
+      }
+    })
+  }
+});
 
 
 

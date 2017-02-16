@@ -89,12 +89,7 @@
 
   <!--  ========================================================================================================    -->
  <div class="my-own-well">
-      <% post.forEach(function (hPost) { %>
-      <% if(hPost.tag === "HOT") { %>
 
-          <% } %>
-
-    <% }) %>
  </div> 
      
   </div>
@@ -106,7 +101,7 @@
 <!--  ========================================================================================================    -->
 <div class='container'>
     <div class='searchBar'>
-      <form action='/mainPage/search' id="searchForm" method='POST'>
+      <form action='/mainPage/?search' id="searchForm" method='get'>
         <h5>Search by Tag</h5>
         <select name="tagName" id="tagName">
                 <option>none</option>
@@ -123,32 +118,55 @@
       </form>
     </div>
 </div>
+
 <div class="container" id="feedsMainContainer">
-<% post.forEach(function (fPost) { %>
-  <% if(fPost.tag !== "HOT") { %>
-  <div class="row">
-    <div class="col-md-12" id="feedsContainer">
 
-      <div id="blogTitle">
-        <h4><a href="/mainPage/<%= fPost._id %>"><%=fPost.title%></a></h4>
-          <p><strong>Posted By: </strong><em><%= fPost.author.firstname + " " + fPost.author.lastname %></em></p>
-        <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><em><%= fPost.date.toDateString() %></em></p>
-        <p id="postTag"><strong>Tag: </strong><span class="tag-color"> <%= fPost.tag %> </span></p>
+        <% bpost.forEach(function( blogPosts ) { %>
+        <h4><a href="/mainPage/<%= blogPosts._id %>"><%=blogPosts.title%></a></h4>
+        <span class="pull-right"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><em><%= blogPosts.date.toDateString() %></em></span>
+        <p><strong>Posted By: </strong><em><%= blogPosts.author.firstname + " " + blogPosts.author.lastname %></em></p>
+        <p id="postTag"><strong>Tag: </strong><span class="tag-color"> <%= blogPosts.tag %> </span></p>
 
-      </div>
-      <div id="imageDiv">
-        <img id="feedsImg" src="https://s-media-cache-ak0.pinimg.com/originals/b8/50/30/b850301ece5049b28010e96970273ab6.jpg">
-      </div>
-        <% if(currentUser.permission === "admin") { %>
-        <form class="postDeleteBtn" action="/mainPage/<%= fPost._id %>?_method=DELETE" method="POST">
-        <button  class="btn btn-danger">delete</button>
-        </form>
-       <a href="/mainPage/<%=fPost._id%>/edit" class="btn btn-warning">Edit</a>
-        <% } %>
-    </div>
-  </div>
+    <% if(currentUser.permission === "admin") { %>
+    <div class="blogPostButtons">
+    <form  action="/mainPage/<%= blogPosts._id %>?_method=DELETE" method="POST">
+        <a>delete</a>
+    </form>
+    <a href="/mainPage/<%=blogPosts._id%>/edit">Edit</a>
     <% } %>
-    <% }) %>
+    </div>
+    <hr>
+        <% }) %>
+
+
+
+    <% if (pageCount > 1) { %>
+    <ul class="pagination">
+        <% if (currentPage > 1) { %>
+        <li><a href="/mainPage/?page=1">&laquo;</a></li>
+        <% } %>
+        <% var i = 1;
+            if (currentPage > 5) {
+                i =+ currentPage - 4;
+            } %>
+        <% if (i !== 1) { %>
+        <li class="disabled"><a href="#">...</a></li>
+        <% } %>
+        <% for (i; i <= pageCount; i++) { %>
+        <% if (currentPage == i) { %>
+        <li class="active"><span><%= i %> <span class="sr-only">(current)</span></span></li>
+        <% } else { %>
+        <li><a href="/mainPage/?page=<%= i %>"><%= i %></a></li>
+        <% } %>
+        <% if (i == ( + currentPage + 4)) { %>
+        <li class="disabled"><a href="#">...</a></li>
+        <% break; } %>
+        <% } %>
+        <% if (currentPage != pageCount) { %>
+        <li><a href="/mainPage/?page=<%= currentPage %>">&raquo;</a></li>
+        <% } %>
+    </ul>
+    <% } %>
 
 </div>
 
