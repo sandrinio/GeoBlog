@@ -113,29 +113,33 @@
                 <option>FAQ</option>
                 <option>Other</option>
         </select>
+          <input type="text" placeholder="Search">
           <span id="testText"></span>
           <input type='submit' id='btnStyleSmall' value='Search'>
       </form>
+        <a href="/mainPage/new"><span id="btnStyleSmall">New Post!</span></a>
     </div>
 </div>
 
 <div class="container" id="feedsMainContainer">
 
+
         <% bpost.forEach(function( blogPosts ) { %>
+    <div class="postContentHolder">
         <h4><a href="/mainPage/<%= blogPosts._id %>"><%=blogPosts.title%></a></h4>
         <span class="pull-right"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><em><%= blogPosts.date.toDateString() %></em></span>
         <p><strong>Posted By: </strong><em><%= blogPosts.author.firstname + " " + blogPosts.author.lastname %></em></p>
         <p id="postTag"><strong>Tag: </strong><span class="tag-color"> <%= blogPosts.tag %> </span></p>
 
-    <% if(currentUser.permission === "admin") { %>
-    <div class="blogPostButtons">
-    <form  action="/mainPage/<%= blogPosts._id %>?_method=DELETE" method="POST">
-        <a>delete</a>
-    </form>
-    <a href="/mainPage/<%=blogPosts._id%>/edit">Edit</a>
-    <% } %>
+        <% if(currentUser.permission === "admin") { %>
+            <div class="blogPostButtons">
+                <form  action="/mainPage/<%= blogPosts._id %>?_method=DELETE" method="POST">
+                    <a class="label-danger"><span class="label label-danger">Delete</span></a>
+                </form>
+            <a href="/mainPage/<%=blogPosts._id%>/edit"><span class="label label-warning">Edit</span></a>
+        <% } %>
+        </div>
     </div>
-    <hr>
         <% }) %>
 
 
