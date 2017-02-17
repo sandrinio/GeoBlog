@@ -17,20 +17,27 @@ $(document).ready(function() {
     return false;
   });
 
+function funcBefore () {
+  $('testText').text('wait...');
+}
 
-  $('#searchForm').submit(function () {
-    $(this).ajaxSubmit({
+function funcSuccess (data) {
+  $('testText').text('hello');
+}
 
-      error: function (errrr) {
-        status('Error: ' + errrr.status);
-      },
-      success: function (response) {
-        console.log($('#tagName').val());
+
+  $('.searchBtn').on('click', function() {
+    $.ajax({
+      type: 'GET',
+      url: '/mainPage/storeRegForms',
+      success: function(data){
+        // $('testText').text(data);
+        console.log(data)
       }
-
     });
-    return false;
-  })
+  });
+  
+  
 });
 
 

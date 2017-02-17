@@ -101,8 +101,8 @@
 <!--  ========================================================================================================    -->
 <div class='container'>
     <div class='searchBar'>
-      <form action='/mainPage/?search' id="searchForm" method='get'>
-        <h5>Search by Tag</h5>
+      <div id="searchForm">
+        <h5>Filter by Tag</h5>
         <select name="tagName" id="tagName">
                 <option>none</option>
                 <option>Android</option>
@@ -114,9 +114,9 @@
                 <option>Other</option>
         </select>
           <input type="text" placeholder="Search">
-          <span id="testText"></span>
-          <input type='submit' id='btnStyleSmall' value='Search'>
-      </form>
+          <span id="testText"><a>https://www.youtube.com/watch?v=fEYx8dQr_cQ</a></span>
+          <input type='submit' id='btnStyleSmall' class='searchBtn' value='Search'>
+      </div>
         <a href="/mainPage/new"><span id="btnStyleSmall">New Post!</span></a>
     </div>
 </div>

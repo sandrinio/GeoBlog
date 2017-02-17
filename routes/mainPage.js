@@ -17,7 +17,6 @@ var storage =   multer.diskStorage({
 var upload = multer({ storage : storage}).single('contentPhoto');
 
 router.get("/mainPage", middleware.isLoggedIn, function(req, res){
-  if(req.query.tagName == undefined || req.query.tagName === 'none'){
     Posts.find({}).sort('-date').exec(function (err, bpost) {
       if (err) {
         console.log(err);
@@ -35,7 +34,7 @@ router.get("/mainPage", middleware.isLoggedIn, function(req, res){
         if (typeof req.query.page !== 'undefined') {
           currentPage = +req.query.page;
         }
-        blogPostsList = blogPostsArray[+currentPage - 1];
+        blogPostsList = blogPostsArray[ + currentPage - 1];
 
         res.render("mainPage/mainPage", {
           bpost: blogPostsList,
@@ -46,35 +45,6 @@ router.get("/mainPage", middleware.isLoggedIn, function(req, res){
         });
       }
     });
-  } else {
-    Posts.findOne({'tag': req.query.tagName}, function (err, bpost) {
-      if (err) {
-        console.log(err);
-      } else {
-        var totalBlogPostsCount = bpost.length,
-          pageSize = 4,
-          pageCount = totalBlogPostsCount / pageSize + 1,
-          currentPage = 1,
-          blogPostsArray = [],
-          blogPostsList = [];
-
-        while (bpost.length > 0) {
-          blogPostsArray.push(bpost.splice(0, pageSize));
-        }
-        if (typeof req.query.page !== 'undefined') {
-          currentPage = +req.query.page;
-        }
-        blogPostsList = blogPostsArray[+currentPage - 1];
-        res.render("mainPage/mainPage", {
-          bpost: blogPostsList,
-          pageSize: pageSize,
-          totalBlogPostsCount: totalBlogPostsCount,
-          pageCount: pageCount,
-          currentPage: currentPage
-        });
-      }
-    })
-  }
 });
 
 
@@ -91,7 +61,10 @@ router.get("/mainPage", middleware.isLoggedIn, function(req, res){
 
 
 router.get("/mainPage/storeRegForms", middleware.isLoggedIn,function (req, res) {
-    res.render("mainPage/storeRegForms")
+  console.log(req.body.tagName)
+  console.log(req.params.tagName)
+  console.log(req.query.tagName)
+    res.send(req.query.tagName)
 });
 
 router.get("/mainPage/appStore", middleware.isLoggedIn, function (req, res) {
