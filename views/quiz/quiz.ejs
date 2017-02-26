@@ -1,14 +1,30 @@
 <%include ../partials/header%>
 
-<div class="container">
-    <% if(currentUser.permission === "admin") { %>
-    <a class="btn btn-warning" href="/quiz/new">Add test questions</a>
-    <% } %>
+<div class="container" id="container">
+    <div class='searchBar'>
+             <h5>Filter by Tag</h5>
+            <select name="tagName" id="tagName">
+                <option>none</option>
+                <option>Android</option>
+                <option>Apple</option>
+                <option>Navision</option>
+                <option>Must know!</option>
+                <option>Billing</option>
+                <option>FAQ</option>
+                <option>Other</option>
+            </select>
+            <input type="text" placeholder="Search">
+            <span id="testText"><a></a></span>
+            <input type='submit' id='btnStyleSmall' class='searchBtn' value='Search'>
+        <a href="/mainPage/new"><span id="btnStyleSmall">New Post!</span></a>
+    </div>
 
-<% post.forEach(function (testPosts) { %>
-    <%= testPosts.title %>
-<% }) %>
-
+    <div class="postContentHolder">
+        <h4 id="blogTitle"><a href="/mainPage/:id">blog title</a></h4>
+        <span class="pull-right"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><em>blog date toDateString() </em></span>
+        <p><strong>Posted By: </strong><em>firstname lastname</em></p>
+        <p id="postTag"><strong>Tag: </strong><span class="tag-color">Android</span></p>
+    </div>
 
 
 </div>

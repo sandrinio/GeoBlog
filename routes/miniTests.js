@@ -18,14 +18,19 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 router.get("/quiz", function(req, res){
-  Posts.find({'tag': 'Android'}, function(err, post) {
+      res.render('quiz/quiz');
+  });
+
+router.get('/quiz/search', function (req, res) {
+  Posts.findOne({'tag': req.body.tagName}, function (err, bpost) {
     if(err){
-      console.log(err);
-    }else{
-      res.render("quiz/quiz", {post: post});
+      res.send(err);
+    } else {
+      res.send({bpost: bpost});
     }
   });
 });
+
 
 router.get("/quiz/new", middleware.permissionChecker, function (req, res) {
    res.render("quiz/new");
@@ -42,17 +47,6 @@ router.post("/quiz/new", middleware.permissionChecker, upload.single('image'), f
 
     console.log(content);
 
-
-
-
-   //  Quiz.create(content, function (err, quiz) {
-  //     if(err){
-  //        console.log(err);
-  //     }else{
-  //         console.log(quiz);
-  //         res.render("quiz/new");
-  //     }
-  // });
  });
 
 

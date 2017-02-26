@@ -18,21 +18,28 @@ $(document).ready(function() {
   });
 
 function funcBefore () {
-  $('testText').text('wait...');
+  $('#testText').text('wait...');
 }
 
 function funcSuccess (data) {
-  $('testText').text('hello');
+  $('#testText').text('hello');
 }
 
+var $container = $('#postContentHolder'),
+    $blogTitle = $('#blogTitle');
 
   $('.searchBtn').on('click', function() {
     $.ajax({
       type: 'GET',
-      url: '/mainPage/storeRegForms',
+      url: '/quiz/search',
+      contentType: 'application/json',
       success: function(data){
-        // $('testText').text(data);
-        console.log(data)
+        $.each(data, function (i, blogPost) {
+          $container.append("<div class='postContentHolder'><h4>" + blogPost.title + " </h4></div>")
+        });
+      },
+      error: function () {
+        console.log('error')
       }
     });
   });

@@ -49,22 +49,21 @@ router.get("/mainPage", middleware.isLoggedIn, function(req, res){
 
 
 
-// ===========  SEARCH MAINPAGE    ===========
-// router.post('/mainPage/search', middleware.isLoggedIn, function(req, res){
-//     Posts.findOne({'tag': req.body.tagName}, function (err, post) {
-//         if(err){
-//             return console.log(err)
-//         }
-//
-//     });
-// });
+
+router.post('/mainPage/search', middleware.isLoggedIn, function(req, res){
+    Posts.findOne({'tag': req.body.tagName}, function (err, bpost) {
+      console.log(bpost.length);
+        if(err) {
+          console.log(err)
+          }else {
+          res.send({bpost: bpost});
+        }
+    });
+});
 
 
 router.get("/mainPage/storeRegForms", middleware.isLoggedIn,function (req, res) {
-  console.log(req.body.tagName)
-  console.log(req.params.tagName)
-  console.log(req.query.tagName)
-    res.send(req.query.tagName)
+  res.render('mainPage/storeRegForms')
 });
 
 router.get("/mainPage/appStore", middleware.isLoggedIn, function (req, res) {

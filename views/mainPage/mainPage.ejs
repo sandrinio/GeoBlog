@@ -101,12 +101,12 @@
 <!--  ========================================================================================================    -->
 <div class='container'>
     <div class='searchBar'>
-      <div id="searchForm">
+      <form action="/mainPage/search" method="POST" id="searchForm">
         <h5>Filter by Tag</h5>
         <select name="tagName" id="tagName">
                 <option>none</option>
                 <option>Android</option>
-                <option>Apple / iOS</option>
+                <option>Apple</option>
                 <option>Navision</option>
                 <option>Must know!</option>
                 <option>Billing</option>
@@ -116,7 +116,7 @@
           <input type="text" placeholder="Search">
           <span id="testText"><a>https://www.youtube.com/watch?v=fEYx8dQr_cQ</a></span>
           <input type='submit' id='btnStyleSmall' class='searchBtn' value='Search'>
-      </div>
+      </form>
         <a href="/mainPage/new"><span id="btnStyleSmall">New Post!</span></a>
     </div>
 </div>
