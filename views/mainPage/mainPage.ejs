@@ -1,5 +1,7 @@
 <%include ../partials/header%>
 
+
+
 <div class="container" id="firstContainer">
 
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -89,9 +91,38 @@
 
   <!--  ========================================================================================================    -->
  <div class="my-own-well">
-
- </div> 
-     
+             <table>
+                 <thead>
+                 <tr>
+                     <th>Title</th>
+                     <th>Posted By</th>
+                     <th>Post Date</th>
+                     <th>Status</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <% bpost.forEach(function (hPost) { %>
+                 <% if(hPost.tag === "HOT") { %>
+                 <tr>
+                     <td class="table-title"><a href="/mainPage/<%= hPost._id %>"><strong><%= hPost.title %></strong></a></td>
+                     <td class="table-td"><%= hPost.author.firstname + " " + hPost.author.lastname %></td>
+                     <td class="table-td"><span><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><em><%= hPost.date.toDateString() %></em></span></td>
+                     <td class="table-td"><%= hPost.status %></td>
+                     <td><a class="label label-default" href="/mainPage/<%= hPost._id %>">More</a></td>
+                     <% if(currentUser.permission === "admin") { %>
+                      <td>
+                         <form  action="/mainPage/<%= hPost._id %>?_method=DELETE" method="POST">
+                             <button type="submit" class="label label-danger">Delete</button>
+                         </form>
+                         <a href="/mainPage/<%=hPost._id%>/edit" class="label label-warning">Edit</a>
+                         <% } %>
+                      </td>
+                 </tr>
+                 <% } %>
+                 <% }); %>
+                 </tbody>
+             </table>
+             <hr>
   </div>
   
 
@@ -99,9 +130,10 @@
 </div>
 
 <!--  ========================================================================================================    -->
-<div class='container'>
+<!--  ========================================================================================================    -->
+<div class='container' id="searchBar">
     <div class='searchBar'>
-      <form action="/mainPage/search" method="POST" id="searchForm">
+      <form action="/mainPage/" method="GET" id="searchForm">
         <h5>Filter by Tag</h5>
         <select name="tagName" id="tagName">
                 <option>none</option>
@@ -114,10 +146,9 @@
                 <option>Other</option>
         </select>
           <input type="text" placeholder="Search">
-          <span id="testText"><a>https://www.youtube.com/watch?v=fEYx8dQr_cQ</a></span>
           <input type='submit' id='btnStyleSmall' class='searchBtn' value='Search'>
       </form>
-        <a href="/mainPage/new"><span id="btnStyleSmall">New Post!</span></a>
+        <a href="/mainPage/new" id="btnStyleSmall" class="btnStyleSmall">New Post!</a>
     </div>
 </div>
 
@@ -130,13 +161,14 @@
         <span class="pull-right"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><em><%= blogPosts.date.toDateString() %></em></span>
         <p><strong>Posted By: </strong><em><%= blogPosts.author.firstname + " " + blogPosts.author.lastname %></em></p>
         <p id="postTag"><strong>Tag: </strong><span class="tag-color"> <%= blogPosts.tag %> </span></p>
+        <span><a class="label label-default" href="/mainPage/<%= blogPosts._id %>">More</a></span>
 
+        <div class="blogPostButtons">
         <% if(currentUser.permission === "admin") { %>
-            <div class="blogPostButtons">
                 <form  action="/mainPage/<%= blogPosts._id %>?_method=DELETE" method="POST">
-                    <a class="label-danger"><span class="label label-danger">Delete</span></a>
+                    <button type="submit" class="label label-danger">Delete</button>
                 </form>
-            <a href="/mainPage/<%=blogPosts._id%>/edit"><span class="label label-warning">Edit</span></a>
+            <a href="/mainPage/<%=blogPosts._id%>/edit" class="label label-warning">Edit</a>
         <% } %>
         </div>
     </div>

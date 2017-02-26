@@ -105,3 +105,35 @@
 <% } %>
 
 </div>
+
+
+if(req.query.tagName){
+Posts.findOne({'tag': req.query.tagName}).sort('-date').exec(function (err, bpost) {
+if (err) {
+console.log(err);
+} else {
+var totalBlogPostsCount = bpost.length,
+pageSize = 4,
+pageCount = totalBlogPostsCount / pageSize + 1,
+currentPage = 1,
+blogPostsArray = [],
+blogPostsList = [];
+
+while (bpost.length > 0) {
+blogPostsArray.push(bpost.splice(0, pageSize));
+}
+if (typeof req.query.page !== 'undefined') {
+currentPage = +req.query.page;
+}
+blogPostsList = blogPostsArray[ + currentPage - 1];
+
+res.render("mainPage/mainPage", {
+bpost: blogPostsList,
+pageSize: pageSize,
+totalBlogPostsCount: totalBlogPostsCount,
+pageCount: pageCount,
+currentPage: currentPage
+});
+}
+});
+}

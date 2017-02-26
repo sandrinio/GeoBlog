@@ -15,7 +15,7 @@ var postsSchema = new mongoose.Schema({
             pic: String
             },
     date: {type: Date, default: Date.now},
-
+    status: String,
     comments: [
         {
             type: mongoose.Schema.Types.ObjectId,

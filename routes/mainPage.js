@@ -1,7 +1,6 @@
 var express = require("express");
 var router = express.Router();
 var Posts = require("../models/post");
-var Comment = require("../models/comment");
 var middleware = require("../middleware");
 var path = require('path');
 var multer  =   require('multer');
@@ -17,12 +16,14 @@ var storage =   multer.diskStorage({
 var upload = multer({ storage : storage}).single('contentPhoto');
 
 router.get("/mainPage", middleware.isLoggedIn, function(req, res){
+  if(!req.query.tagName || req.query.tagName === 'none'){
     Posts.find({}).sort('-date').exec(function (err, bpost) {
       if (err) {
-        console.log(err);
+        res.redirect('back');
+        req.flash('Error', err)
       } else {
         var totalBlogPostsCount = bpost.length,
-          pageSize = 4,
+          pageSize = 10,
           pageCount = totalBlogPostsCount / pageSize + 1,
           currentPage = 1,
           blogPostsArray = [],
@@ -35,7 +36,6 @@ router.get("/mainPage", middleware.isLoggedIn, function(req, res){
           currentPage = +req.query.page;
         }
         blogPostsList = blogPostsArray[ + currentPage - 1];
-
         res.render("mainPage/mainPage", {
           bpost: blogPostsList,
           pageSize: pageSize,
@@ -45,20 +45,37 @@ router.get("/mainPage", middleware.isLoggedIn, function(req, res){
         });
       }
     });
-});
+    }else{
+    Posts.find({tag: req.query.tagName}, function (err, bpost) {
+    if(err){
+      res.redirect('back');
+      req.flash('Error', err)
+    }else{
+      var totalBlogPostsCount = bpost.length,
+        pageSize = 10,
+        pageCount = totalBlogPostsCount / pageSize + 1,
+        currentPage = 1,
+        blogPostsArray = [],
+        blogPostsList = [];
 
-
-
-
-router.post('/mainPage/search', middleware.isLoggedIn, function(req, res){
-    Posts.findOne({'tag': req.body.tagName}, function (err, bpost) {
-      console.log(bpost.length);
-        if(err) {
-          console.log(err)
-          }else {
-          res.send({bpost: bpost});
-        }
+      while (bpost.length > 0) {
+        blogPostsArray.push(bpost.splice(0, pageSize));
+      }
+      if (typeof req.query.page !== 'undefined') {
+        currentPage = +req.query.page;
+      }
+      blogPostsList = blogPostsArray[ + currentPage - 1];
+      res.render("mainPage/mainPage", {
+        bpost: blogPostsList,
+        pageSize: pageSize,
+        totalBlogPostsCount: totalBlogPostsCount,
+        pageCount: pageCount,
+        currentPage: currentPage
+      });
+    }
     });
+  }
+
 });
 
 

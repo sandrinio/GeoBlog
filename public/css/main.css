@@ -46,7 +46,8 @@
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
-    border-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     padding: 20px;
 }
 
@@ -170,12 +171,27 @@ div#regFormContainer {
     border: rebeccapurple solid 1px;
     height: 240px;
     width: 100%;
+    padding: 25px;
+    overflow-y: scroll;
 }
-
-.my-own-well img{
-    width: 60px;
+.my-own-well thead {
+    border-bottom: solid black 1px;
 }
+.my-own-well th {
 
+}
+.table-td {
+    min-width: 150px;
+    border-bottom: 1px black solid;
+}
+.table-title {
+    min-width: 300px;
+    width: 100%;
+    border-bottom: 1px black solid;
+}
+table {
+    width: 100%;
+}
 
 .post-container {
     min-width: 420px;
@@ -279,9 +295,15 @@ a.userLink {
     border-radius: 5px;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.45);
 }
+.btnStyleSmall {
+    float: right;
+    margin-top: 2px;
+    margin-right: 20px;
+}
 #btnStyleSmall:hover {
     background-color: #00c58f;
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
+    text-decoration: none;
 }
 
 #comment-date {
@@ -344,7 +366,13 @@ box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 
 .searchBar {
     background-color: #754c97;
-    border-radius: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.45);
+}
+
+#searchBar {
+    padding: 0;
 }
 
 .searchBar h5 {
@@ -376,16 +404,23 @@ box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 
 #searchForm {
     display: inline-block;
+    margin-left: 23px;
+}
+
+footer {
+    height: 100px;
+    background-color: #583c78;
+    color: white;
+    padding: 20px;
+    padding: 20px;
+    bottom: 0;
+    width:100%;
 }
 
 
+.roundButton {
 
-
-
-
-
-
-
+}
 
 
 
@@ -401,11 +436,11 @@ box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
     /*============================  navbar remake  ========================================================*/
 
 .navbar.navbar-default {
-    background-color: #521D62;
+    background-color: #583c78;
     margin-bottom: 0;
 }
 .dropdown-menu>li>a{
-    background-color: #521D62;
+    background-color: #583c78;
     color: white;
 }
 /*421C52*/

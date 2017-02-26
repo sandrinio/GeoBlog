@@ -18,18 +18,22 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 router.get("/quiz", function(req, res){
-      res.render('quiz/quiz');
-  });
-
-router.get('/quiz/search', function (req, res) {
-  Posts.findOne({'tag': req.body.tagName}, function (err, bpost) {
-    if(err){
-      res.send(err);
-    } else {
-      res.send({bpost: bpost});
+    if(!req.query.tagName){
+      Posts.find({}).sort('-date').exec(function (err, bpost) {
+        if(err){
+          console.log(err)
+        }else{
+        res.render('quiz/quiz', {bpost: bpost})
+        }
+      });
+    }else{
+      Posts.find({tag: req.query.tagName}, function (err, bpost) {
+        console.log(bpost);
+        res.render('quiz/quiz', {bpost: bpost});
+      });
     }
   });
-});
+
 
 
 router.get("/quiz/new", middleware.permissionChecker, function (req, res) {

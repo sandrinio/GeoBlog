@@ -1,22 +1,26 @@
 <%include ../partials/header%>
 
 <div class="container" id="container">
-    <div class='searchBar'>
-             <h5>Filter by Tag</h5>
-            <select name="tagName" id="tagName">
-                <option>none</option>
-                <option>Android</option>
-                <option>Apple</option>
-                <option>Navision</option>
-                <option>Must know!</option>
-                <option>Billing</option>
-                <option>FAQ</option>
-                <option>Other</option>
-            </select>
-            <input type="text" placeholder="Search">
-            <span id="testText"><a></a></span>
-            <input type='submit' id='btnStyleSmall' class='searchBtn' value='Search'>
-        <a href="/mainPage/new"><span id="btnStyleSmall">New Post!</span></a>
+    <div class='container'>
+        <div class='searchBar'>
+            <form action="/quiz/" method="GET" id="searchForm">
+                <h5>Filter by Tag</h5>
+                <select name="tagName" id="tagName">
+                    <option>none</option>
+                    <option>Android</option>
+                    <option>Apple</option>
+                    <option>Navision</option>
+                    <option>Must know!</option>
+                    <option>Billing</option>
+                    <option>FAQ</option>
+                    <option>Other</option>
+                </select>
+                <input type="text" placeholder="Search">
+                <span id="testText"><a>https://www.youtube.com/watch?v=fEYx8dQr_cQ</a></span>
+                <input type='submit' id='btnStyleSmall' class='searchBtn' value='Search'>
+            </form>
+            <a href="/mainPage/new"><span id="btnStyleSmall">New Post!</span></a>
+        </div>
     </div>
 
     <div class="postContentHolder">

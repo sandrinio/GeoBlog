@@ -1,53 +1,21 @@
 $(document).ready(function() {
 
-  $('#uploadForm').submit(function() {
-    $("#status").empty().text("File is uploading...");
-    $(this).ajaxSubmit({
 
-      error: function(xhr) {
-        status('Error: ' + xhr.status);
-      },
 
-      success: function(response) {
-        $("#status").empty().text(response);
-        console.log(response);
-      }
-    });
-    //Very important line, it disable the page refresh.
-    return false;
-  });
-
-function funcBefore () {
-  $('#testText').text('wait...');
-}
-
-function funcSuccess (data) {
-  $('#testText').text('hello');
-}
-
-var $container = $('#postContentHolder'),
-    $blogTitle = $('#blogTitle');
-
-  $('.searchBtn').on('click', function() {
-    $.ajax({
-      type: 'GET',
-      url: '/quiz/search',
-      contentType: 'application/json',
-      success: function(data){
-        $.each(data, function (i, blogPost) {
-          $container.append("<div class='postContentHolder'><h4>" + blogPost.title + " </h4></div>")
-        });
-      },
-      error: function () {
-        console.log('error')
-      }
-    });
-  });
-  
-  
+ //
+ //  $('.searchBtn').on('click', function() {
+ //    $.ajax({
+ //      type: 'GET',
+ //      url: '/mainPage/',
+ //      contentType: 'application/json',
+ //      success: console.log('good job'),
+ //      error: function () {
+ //        console.log('error')
+ //      }
+ //    });
+ //
+ // });
 });
-
-
 
 
 

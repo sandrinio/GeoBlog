@@ -51,7 +51,6 @@
         <% return string.charAt(0).toUpperCase() + string.slice(1); %>
         <% } %>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="/mainPage/new"><span id="btnStyle">New Post!</span></a></li>
           <% if(currentUser && currentUser.pic !== ""){ %>
 
           <li><a class="userlink" href="/profile"><img class="img-rounded" id="userPic" src="/uploads/userPictures/<%=currentUser.pic%>"><em><%=capitalizeFirstLetter(currentUser.firstname) + " " + capitalizeFirstLetter(currentUser.lastname)%></em></a></li>
@@ -77,4 +76,6 @@
     </div>
     <% } %>
 
+
+<!--  ========================================================================================================    -->
 
