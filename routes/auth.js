@@ -33,7 +33,7 @@ router.post("/new", function (req, res) {
 
 router.post("/", passport.authenticate("local", {
     successRedirect: "/mainPage",
-    failureRedirect: "/",
+    failureRedirect: "/"
 }), function (req, res) {
     req.flash("success", "Welcome " + user.firstname + " " + (user.lastname));
     res.redirect("mainPage/mainPage");

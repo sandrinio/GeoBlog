@@ -23,12 +23,28 @@ router.get("/profile", function(req, res){
    res.render("auth/profile");
 });
 
+router.post('/profile/changePass', function (req, res) {
+    User.findByIdAndUpdate(req.user.id, function (err, user) {
+        if(err){
+            req.flash("error", err)
+        }else{
+            user.setPassword(req.body.passInput, function (err, pass) {
+                if(err){
+                    req.flash('error', err)
+                }else{
+                    res.redirect('back')
+                }
+            });
+          }
+      });
+});
+
 router.put("/profile", function (req, res) {
     User.findByIdAndUpdate(req.user.id, req.body.user, function (err, user) {
         if(err){
             console.log(err);
         }else{
-            res.redirect("/profile");
+            res.redirect("back");
         }
     });
 });

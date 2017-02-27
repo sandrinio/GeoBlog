@@ -412,9 +412,8 @@ footer {
     background-color: #583c78;
     color: white;
     padding: 20px;
-    padding: 20px;
-    bottom: 0;
-    width:100%;
+    margin-bottom: 0%;
+    width: 100%;
 }
 
 
@@ -422,7 +421,9 @@ footer {
 
 }
 
-
+#expendableTable {
+    display: none;
+}
 
 
 

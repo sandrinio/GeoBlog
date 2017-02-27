@@ -1,6 +1,12 @@
 $(document).ready(function() {
 
 
+  $('#expand').on('click', function () {
+        $('#expendableTable').show(1000);
+  });
+
+
+
 
  //
  //  $('.searchBtn').on('click', function() {

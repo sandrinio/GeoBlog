@@ -42,9 +42,16 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input class="btn btn-danger btnStyle" type="submit" value="Update Info"></tr>
+                <td><input class="btn btn-danger btnStyle pull-right" type="submit" value="Update Info"></tr>
+             </form>
+                 <td><button class="btn btn-primary" id="expand">Change Password</button></td>
             </tr>
-            </form>
+            <tr id="expendableTable" class="expendableTable">
+                <form action="/profile/changePass" method="POST">
+                <td>Password:   <input type="text" id="pass1" name="passInput"><br>
+                Type Again: <input id="pass2" type="text"><br><button id="changePasswordBtn" class="btn btn-danger btnStyle" type="submit">Update</button></td>
+                </form>
+            </tr>
           </table>
       
     </div>
