@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function() {
 
 
@@ -150,3 +151,17 @@ $(document).ready(function() {
 //      }
 //   })
 // });
+=======
+
+function printFunction() {
+    window.print();
+}
+
+
+$("a#changeColor").each(function () {
+    console.log($(this).text())
+      if($(this.text === "Sandro Suladze")){
+          $(this).css("color", "red");
+      }
+    });
+>>>>>>> parent of 13dc78a... "javascript v1"

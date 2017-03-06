@@ -1,7 +1,6 @@
 var express = require("express");
 var router = express.Router();
 var Quiz = require("../models/quiz");
-var Posts = require('../models/post');
 var multer = require('multer');
 var path = require('path');
 var middleware = require("../middleware");
@@ -18,6 +17,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 router.get("/quiz", function(req, res){
+<<<<<<< HEAD
     if(!req.query.tagName){
       Posts.find({}).sort('-date').exec(function (err, bpost) {
         if(err){
@@ -35,6 +35,19 @@ router.get("/quiz", function(req, res){
   });
 
 
+=======
+    Quiz.find({}, function (err, quiz) {
+        if(err){
+            req.flash("error", err);
+            console.log(err)
+        }else{
+            res.render("quiz/quiz", {quiz: quiz});
+        }
+    });
+
+
+});
+>>>>>>> parent of 13dc78a... "javascript v1"
 
 router.get("/quiz/new", middleware.permissionChecker, function (req, res) {
    res.render("quiz/new");

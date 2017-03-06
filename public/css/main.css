@@ -66,7 +66,7 @@
 }
 
 #firstContainer {
-    margin-top: 20px;
+
     margin-bottom: 20px;
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
@@ -133,7 +133,7 @@ div#regFormContainer {
 }
 
 .table.table-striped {
-    width: 100%;
+    max-width: 500px;
 }
 
 
@@ -147,8 +147,7 @@ div#regFormContainer {
 }
 
 #profileDiv {
-    margin-top: 20px;
-    width: 100%;
+    max-width: 530px;
     -webkit-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
@@ -380,6 +379,7 @@ box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
     color: white;
 }
 
+<<<<<<< HEAD
 .searchBar form{
     display: inline-block;
 }
@@ -387,6 +387,9 @@ box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.45);
 #preview img{
     width: 100px;
 }
+=======
+
+>>>>>>> parent of 13dc78a... "javascript v1"
 
 .postContentHolder h4 {
     margin-top: 0;
@@ -437,8 +440,12 @@ footer {
     /*============================  navbar remake  ========================================================*/
 
 .navbar.navbar-default {
+<<<<<<< HEAD
     background-color: #583c78;
     margin-bottom: 0;
+=======
+    background-color: #754c97;
+>>>>>>> parent of 13dc78a... "javascript v1"
 }
 .dropdown-menu>li>a{
     background-color: #583c78;

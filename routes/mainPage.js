@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var Posts = require("../models/post");
 var middleware = require("../middleware");
+<<<<<<< HEAD
 var path = require('path');
 var multer  =   require('multer');
 
@@ -14,6 +15,9 @@ var storage =   multer.diskStorage({
   }
 });
 var upload = multer({ storage : storage}).single('contentPhoto');
+=======
+
+>>>>>>> parent of 13dc78a... "javascript v1"
 
 router.get("/mainPage", middleware.isLoggedIn, function(req, res){
   if(!req.query.tagName || req.query.tagName === 'none'){
@@ -48,6 +52,7 @@ router.get("/mainPage", middleware.isLoggedIn, function(req, res){
     }else{
     Posts.find({tag: req.query.tagName}, function (err, bpost) {
     if(err){
+<<<<<<< HEAD
       res.redirect('back');
       req.flash('Error', err)
     }else{
@@ -77,6 +82,26 @@ router.get("/mainPage", middleware.isLoggedIn, function(req, res){
   }
 
 });
+=======
+           console.log(err);
+       }else{
+           res.render("mainPage/mainPage", {post: post});
+       }
+   });
+});
+
+
+
+// router.post('/mainPage/search', middleware.isLoggedIn, function(req, res){
+//     Posts.findOne({'tag': req.body.tagName}, function (err, post) {
+//         if(err){
+//             return console.log(err)
+//         }
+//         res.render('mainPage/mainPage', {post: post})
+        
+//     });
+// });
+>>>>>>> parent of 13dc78a... "javascript v1"
 
 
 router.get("/mainPage/storeRegForms", middleware.isLoggedIn,function (req, res) {
@@ -105,6 +130,7 @@ router.get("/mainPage/:id", middleware.isLoggedIn, function (req, res) {
     });
 });
 
+<<<<<<< HEAD
 
 
 router.post('/mainPage/imgLinkGenerator', function (req, res) {
@@ -119,6 +145,8 @@ router.post('/mainPage/imgLinkGenerator', function (req, res) {
 
 
 
+=======
+>>>>>>> parent of 13dc78a... "javascript v1"
 router.post("/mainPage", middleware.isLoggedIn, function (req, res) {
     var postContent = req.body.iPost;
     postContent.author = {
@@ -136,7 +164,6 @@ router.post("/mainPage", middleware.isLoggedIn, function (req, res) {
        res.redirect("/mainPage");
    });
 });
-
 
 
 

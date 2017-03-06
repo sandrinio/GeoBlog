@@ -1,11 +1,11 @@
 .loginFormContainer {
     margin-top: 15%;
+    width: 500px;
 }
 
 #loginColContainer{
     float: none; 
     margin: 0 auto;
-    width: 25%;
 }
 
 

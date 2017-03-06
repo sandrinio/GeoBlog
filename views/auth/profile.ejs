@@ -5,13 +5,13 @@
     
     <div id="profileDiv">
 
-
+      <img class="img-thumbnail userProfile-image" src="/uploads/userPictures/<%=currentUser.pic%>">
 
           <table class="table table-striped">
 
             <tr>
-                <td><img class="img-thumbnail userProfile-image" src="/uploads/userPictures/<%=currentUser.pic%>"><h1> Change your info </h1></td>
                 <td></td>
+                <td><h1> Change your info </h1></td>
             </tr>
                 <form action="/avatar?_method=PUT" method="POST" enctype="multipart/form-data">
             <tr>
